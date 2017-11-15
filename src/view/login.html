@@ -1,37 +1,11 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="">
-  <meta name="keywords" content="">
-  <!-- 删除默认的苹果工具栏和菜单栏 -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <!-- 控制状态栏显示样式 -->
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <meta name="format-detection" content="telephone=no">
-  <meta name="format-detection" content="email=no">
-  <meta name="applicable-device" content="mobile">
-  <link href="https://cdn.bootcss.com/normalize/7.0.0/normalize.min.css" rel="stylesheet">
-  <link href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.bootcss.com/Swiper/4.0.1/css/swiper.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="../css/common.css">
-  
-  <!--[if lt IE 9]>
-     <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-     <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
-   <![endif]-->
+  <%= require('html-loader!./layout/html-common.html') %>
   <title>Document</title>
 </head>
 <body>
-  <div class="top top-wrap">
-    <a href="index.html" class="back"></a>
-    <h2 class="text-center">登录</h2>
-  </div>
-  <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdn.bootcss.com/jquery_lazyload/1.9.7/jquery.lazyload.min.js"></script>
-  <script src="https://cdn.bootcss.com/Swiper/4.0.1/js/swiper.min.js"></script>
+  <%= require('html-loader!./layout/top.html') %>
+  <%= require('html-loader!./layout/footer.html') %>
 </body>
 </html>

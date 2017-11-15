@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-15 19:43:13
+* @Last Modified time: 2017-11-15 20:03:59
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -71,7 +71,8 @@ var config = {
             node_modules    : __dirname + '/node_modules',
             image           : __dirname + '/src/image',
             js              : __dirname + '/src/js',
-            scss            : __dirname + '/src/scss'
+            scss            : __dirname + '/src/scss',
+            page            : __dirname + '/src/page'
         }
     },
     postcss: [
@@ -106,7 +107,7 @@ var config = {
 
         // html模板的处理
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
-        // new HtmlWebpackPlugin(getHtmlConfig('list', '商品列表页')),
+        new HtmlWebpackPlugin(getHtmlConfig('login', '登录')),
         // new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
         // new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
