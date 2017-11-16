@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-16 11:20:52
+* @Last Modified time: 2017-11-16 20:34:45
 */
 $green: #3dbd95;
 $grey: #f0f0f0;
@@ -14,32 +14,124 @@ li, ul {
 body {
   background-color: $grey;
   color: #333;
+  font-family: "Microsoft YaHei";
 }
 h1, h2, h3, h4, h5, h6 {
   padding: 0;
   margin: 0;
+}
+input {
+  outline: none;
 }
 
 
 
 // 登录注册头部
 .top-wrap{
-  height: 45px;
+  height: 55px;
   background-color: #fff;
   position: relative;
+  margin-bottom: 10px;
   .back {
     display: block;
-    height: 20px;
-    width: 20px;
+    height: 24px;
+    width: 24px;
     position: absolute;
-    top: 12px;
+    top: 10px;
     left: 20px;
-    background: url('../../image/focus1.png') center;
+    background: url('../../image/arrow-left.png') center;
   }
   h2 {
-    line-height: 45px;
-    font-weight: 500;
-    font-size: 1.2em;
+    line-height: 55px;
+    font-weight: 700;
+    font-size: 1.5em;
   }
 
+}
+
+// 登录注册主内容部分
+.log-wrap {
+  input {
+    width: 100%;
+    display: block;
+    border: 0px;
+    padding: 22px 20px 22px 40px;
+    font-size: 16px;
+  }
+  .phone {
+    background:#fff url('../../image/icon3_2.png') 10px center no-repeat;
+  }
+  .phone.success-green {
+    background-image: url('../../image/icon3_1.png');
+  }
+  .password {
+    background:#fff url('../../image/icon3_4.png') 10px center no-repeat;
+  }
+  .password.success-green {
+    background-image: url('../../image/icon3_3.png');
+  }
+  .ma {
+    padding-right: 150px;
+    background:#fff url('../../image/icon3_6.png') 10px center no-repeat;
+  }
+  .ma.success-green {
+    background-image: url('../../image/icon3_5.png');
+  }
+  .ma-wrap {
+    position: relative;
+    border-top: 1px solid #d7d7d7;
+    border-bottom: 1px solid #d7d7d7;
+    .btn-get-ma {
+      position: absolute;
+      top: 12px;
+      right: 15px;
+      color: #fff;
+      font-size: 1em;
+      background-color: #ccc;
+      padding: 10px 15px;
+    }
+  }
+  .submit-wrap {
+    margin: 30px 10px 0 10px;
+    .btn {
+      padding: 15px 0;
+      background-color: $green;
+      color: #fff;
+      font-size: 1.5em;
+    }
+    .register-submit {
+      background-color: #bbb;
+    }
+  }
+  input + input {
+    border-top: 1px solid #d7d7d7;
+  }
+  .forget-pass {
+    margin-top: 10px;
+    color: $green;
+    float: right;
+    margin-right: 10px;
+  }
+  .fast-login {
+    position: relative;
+    margin: 80px auto 0;
+    width: 60%;
+    border-top: 1px solid #d7d7d7;
+    .text {
+      position: absolute;
+      top: -14px;
+      left: 53%;
+      padding: 0 10px;
+      margin-left: -51px;
+      color: #999;
+      font-size: 1.3em;
+      background-color: $grey;
+    }
+    .wechat {
+      display: block;
+      padding-top: 100px;
+      background: url('../../image/wechat.png') center no-repeat;
+      color: #333;
+    }
+  }
 }

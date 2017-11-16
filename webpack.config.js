@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-16 11:22:36
+* @Last Modified time: 2017-11-16 20:14:38
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -108,8 +108,8 @@ var config = {
         // html模板的处理
         new HtmlWebpackPlugin(getHtmlConfig('index', '首页')),
         new HtmlWebpackPlugin(getHtmlConfig('login', '登录')),
-        // new HtmlWebpackPlugin(getHtmlConfig('detail', '商品详情页')),
-        // new HtmlWebpackPlugin(getHtmlConfig('cart', '购物车')),
+        new HtmlWebpackPlugin(getHtmlConfig('register', '注册')),
+        new HtmlWebpackPlugin(getHtmlConfig('forgetPassword', '找回密码')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-login', '用户登录')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
