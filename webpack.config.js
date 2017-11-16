@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-15 22:57:28
+* @Last Modified time: 2017-11-16 11:22:36
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -51,7 +51,7 @@ var config = {
         loaders: [
             {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
             {test: /\.scss$/,loader: ExtractTextPlugin.extract("style", 'css!sass')},
-            {test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=8192&name=images/[name].[ext]' },
+            {test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=20480&name=images/[name].[ext]' },
             {test: /\.string$/, loader: 'html-loader'}
         ]
         /*rules: [
