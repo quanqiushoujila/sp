@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-15 22:47:24
+* @Last Modified time: 2017-11-16 10:23:31
 */
 $green: #3dbd95;
 $grey: #f0f0f0;
@@ -23,20 +23,23 @@ h1, h2, h3, h4, h5, h6 {
 
 
 // 登录注册头部
-.top {
-  height: 95px;
+.top-wrap{
+  height: 45px;
   background-color: #fff;
   position: relative;
   .back {
     display: block;
-    height: 48px;
-    width: 48px;
-    background-image: url('../../image/left-arrow.png');
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    background: url('../../image/left-arrow.png') center;
   }
   h2 {
-    line-height: 95px;
+    line-height: 45px;
     font-weight: 500;
-    font-size: 2.25em;
+    font-size: 1.2em;
   }
 
 }
