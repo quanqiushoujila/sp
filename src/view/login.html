@@ -8,13 +8,13 @@
   <%= require('html-loader!./layout/top.html') %>
   <div class="log-wrap">
     <form action="">
-      <input type="number" class="input-type phone" name="phone" id="phone">
-      <input type="password" class="input-type password" name="password" id="password">
+      <input type="number" class="input-type phone" name="phone" id="phone" autoComplete='off' placeholder="请输入手机号">
+      <input type="password" class="input-type password" name="password" id="password" autoComplete='off' placeholder="请输入密码">
       <div class="submit-wrap">
         <button class="btn btn-block" type="submit" id="login-submit">确定</button>
       </div>
     </form>
-    <a href="#" class="forget-pass">忘记密码？</a>
+    <a href="./forgetPassword.html" class="forget-pass">忘记密码？</a>
     <div class="fast-login text-center">
       <p class="text">快捷登录</p>
       <a href="#" class="wechat">微信登录</a>

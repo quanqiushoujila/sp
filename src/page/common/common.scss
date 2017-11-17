@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-16 20:34:45
+* @Last Modified time: 2017-11-17 14:03:13
 */
 $green: #3dbd95;
 $grey: #f0f0f0;
@@ -22,6 +22,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 input {
   outline: none;
+}
+
+.text-green {
+  color: $green;
 }
 
 
@@ -88,7 +92,11 @@ input {
       color: #fff;
       font-size: 1em;
       background-color: #ccc;
-      padding: 10px 15px;
+      padding: 10px 0;
+      width: 102px;
+      &.text-green {
+        background-color: $green;
+      }
     }
   }
   .submit-wrap {
@@ -100,7 +108,10 @@ input {
       font-size: 1.5em;
     }
     .register-submit {
-      background-color: #bbb;
+      background-color: #ccc;
+      &.success-green {
+        background-color: $green;
+      }
     }
   }
   input + input {
@@ -132,6 +143,28 @@ input {
       padding-top: 100px;
       background: url('../../image/wechat.png') center no-repeat;
       color: #333;
+    }
+  }
+  .agree {
+    position: relative;
+    margin: 10px 10px 0 10px;
+    color: #999;
+    input {
+      position: absolute;
+      top: 0;
+      right: 0; 
+      display: none;
+    }
+    span {
+      padding-left: 20px;
+
+      background: url('../../image/ma1.png') 0px 2px no-repeat;
+    }
+    .agree-scueess {
+      background-image: url('../../image/ma2.png');
+    }
+    .btn-text {
+      color: $green;
     }
   }
 }
