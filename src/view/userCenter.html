@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <%= require('html-loader!./layout/html-common.html') %>
+  <title><%= htmlWebpackPlugin.options.title%></title>
+</head>
+<body>
+  <div class="top top-wrap top-green">
+    <a class="back" href="javascript:void(0);" onclick="window.history.back()"></a>
+    <h2 class="text-center">个人中心</h2>
+    <a href="javascript:void(0);" class="logout">退出登录</a>
+  </div>
+  <div class="user-wraper">
+    <div class="user-top">
+      <div class="info clearfix">
+        <img src="" alt="" class="pull-left avatar">
+        <div class="content pull-left">
+          <p class="name text-overflow text">11111111</p>
+          <p class="phone text-overflow text">12345678901</p>
+        </div>
+      </div>
+      <a href="#" class="turn"></a>
+    </div>
+    <div class="links-list clearfix">
+      <a href="#" class="col-xs-4 item money">
+        
+      </a>
+      <a href="#" class="col-xs-4 item quan">
+        
+      </a>
+      <a href="#" class="col-xs-4 item commit">
+        
+      </a>
+    </div>
+    <div class="user-content">
+      
+    </div>
+  </div>
+  <%= require('html-loader!./layout/footer.html') %>
+</body>
+</html>

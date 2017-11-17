@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:06:11
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-17 14:07:09
+* @Last Modified time: 2017-11-17 17:00:21
 */
 'use strict';
 // 通用方法
@@ -74,7 +74,7 @@ var _logValid = {
         phone: $.trim($('#phone').val()),
         password: $.trim($('#password').val())
       }
-      var validateResult = _this.logValidate(formData);
+      var validateResult = _this.loginValidate(formData);
 
       if (validateResult.status) {
         _bm.successMsg(validateResult.msg);
@@ -100,7 +100,7 @@ var _logValid = {
         $('#ma').addClass('success-green');
         $('#password').addClass('success-green');
         if ($('.agree label input').prop('checked')) {
-          $('#register-submit').prop('disabled', false).addClass('success-green');
+          $('.register-submit').prop('disabled', false).addClass('success-green');
         }
       } else {
         _bm.errorMsg(validateResult.msg);
@@ -114,9 +114,11 @@ var _logValid = {
       var checked = $(this).find('input').prop('checked');
       if (checked) {
         $('.agree span').removeClass('agree-scueess');
-        $('#register-submit').prop('disabled', false).addClass('success-green');
+        if (!$('.btn-get-ma').prop('disabled')) {
+          $('.register-submit').prop('disabled', false).addClass('success-green');
+        }
       } else {
-        $('#register-submit').prop('disabled', true).removeClass('success-green');
+        $('.register-submit').prop('disabled', true).removeClass('success-green');
         $('.agree span').addClass('agree-scueess');
       }
     });
@@ -146,13 +148,49 @@ var _logValid = {
         $('#ma').addClass('success-green');
         $('#password').addClass('success-green');
         if ($('.agree label input').prop('checked')) {
-          $('#register-submit').prop('disabled', false).addClass('success-green');
+          $('.register-submit').prop('disabled', false).addClass('success-green');
         }
       } else {
         _bm.errorMsg(validateResult.msg);
         return false;
       }
 
+    });
+
+    // 注册
+    $('#register-submit').click(function () {
+      var formData = {
+        phone: $.trim($('#phone').val()),
+        ma: $.trim($('#ma').val()),
+        password: $.trim($('#password').val())
+      }
+      var validateResult = _this.registerValidate(formData);
+      console.log(validateResult)
+      if (validateResult.status) {
+        _bm.successMsg(validateResult.msg)
+      } else {
+        _bm.errorMsg(validateResult.msg);
+        return false;
+      }
+      return;
+    });
+
+    // 找回密码
+    $('#forget-pass-submit').click(function () {
+      var formData = {
+        phone: $.trim($('#phone').val()),
+        ma: $.trim($('#ma').val()),
+        password: $.trim($('#password').val())
+      }
+      var validateResult = _this.registerValidate(formData);
+      console.log(validateResult)
+      if (validateResult.status) {
+        _bm.successMsg(validateResult.msg)
+      } else {
+        _bm.errorMsg(validateResult.msg);
+        return false;
+      }
+      return;
     });
   },
 
@@ -171,7 +209,7 @@ var _logValid = {
   },
 
   // 登录验证
-  logValidate: function (formData) {
+  loginValidate: function (formData) {
     var result = {
       msg: '',
       status: false
@@ -213,6 +251,38 @@ var _logValid = {
       result.msg = '手机号不正确';
       return result;
     }
+
+    result.msg = '成功';
+    result.status = true;
+    return result;
+  },
+  // 注册验证
+  registerValidate: function (formData) {
+    var result = {
+      msg: '',
+      status: false
+    };
+
+    if (!_bm.validate(formData.phone, 'require')) {
+      result.msg = '手机号不能为空';
+      return result;
+    }
+
+    if (!_bm.validate(formData.ma, 'require')) {
+      result.msg = '验证码不能为空';
+      return result;
+    }
+
+    if (!_bm.validate(formData.password, 'require')) {
+      result.msg = '密码不能为空';
+      return result;
+    }
+
+    if (!_bm.validate(formData.phone, 'phone')) {
+      result.msg = '手机号不正确';
+      return result;
+    }
+
 
     result.msg = '成功';
     result.status = true;

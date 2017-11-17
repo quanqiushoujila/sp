@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-17 14:03:13
+* @Last Modified time: 2017-11-17 16:32:24
 */
 $green: #3dbd95;
 $grey: #f0f0f0;
@@ -27,6 +27,11 @@ input {
 .text-green {
   color: $green;
 }
+.text-overflow {
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
 
 
 
@@ -41,16 +46,28 @@ input {
     height: 24px;
     width: 24px;
     position: absolute;
-    top: 10px;
-    left: 20px;
-    background: url('../../image/arrow-left.png') center;
+    top: 15px;
+    left: 10px;
+    background: url('../../image/icon6.png') 0 -302px;
   }
   h2 {
     line-height: 55px;
     font-weight: 700;
     font-size: 1.5em;
   }
-
+  &.top-green {
+    background-color: $green;
+    color: #fff;
+    .back {
+      background-position: 0 -342px;
+    }
+    .logout {
+      position: absolute;
+      right: 20px;
+      top: 18px;
+      color: #d7d7d7;
+    }
+  }
 }
 
 // 登录注册主内容部分
@@ -62,24 +79,27 @@ input {
     padding: 22px 20px 22px 40px;
     font-size: 16px;
   }
+  .input-type {
+    background:#fff url('../../image/icon3.png') no-repeat;
+  }
   .phone {
-    background:#fff url('../../image/icon3_2.png') 10px center no-repeat;
+    background-position: 12px -33px; 
   }
   .phone.success-green {
-    background-image: url('../../image/icon3_1.png');
+    background-position: 12px 22px;
   }
   .password {
-    background:#fff url('../../image/icon3_4.png') 10px center no-repeat;
+    background-position: 12px -147px;
   }
   .password.success-green {
-    background-image: url('../../image/icon3_3.png');
+    background-position: 12px -91px;
   }
   .ma {
     padding-right: 150px;
-    background:#fff url('../../image/icon3_6.png') 10px center no-repeat;
+    background-position: 12px -255px;
   }
   .ma.success-green {
-    background-image: url('../../image/icon3_5.png');
+    background-position: 12px -200px;
   }
   .ma-wrap {
     position: relative;
@@ -158,13 +178,81 @@ input {
     span {
       padding-left: 20px;
 
-      background: url('../../image/ma1.png') 0px 2px no-repeat;
+      background: url('../../image/icon6.png') -4px -75px no-repeat;
     }
     .agree-scueess {
-      background-image: url('../../image/ma2.png');
+      background-position: -4px -113px;
     }
     .btn-text {
       color: $green;
     }
   }
+}
+
+// 个人中心
+.user-wraper {
+  margin-top: -11px;
+  .user-top {
+    position: relative;
+    padding: 30px 10px;
+    background-color: $green;
+    color: #fff;
+    .info {
+      width: 80%;
+      overflow: hidden;
+      .avatar {
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+      .content {
+        width: calc(100% - 100px);
+        margin-left: 10px;
+        p {
+          padding: 5px 0;
+          margin-bottom: 0;
+        }
+        .text {
+          width: 100%; 
+        }
+        .name {
+          font-size: 16px;
+        }
+        .phone {
+          padding-left: 20px;
+          background: transparent url('../../image/phone-white.png') 0 0 no-repeat;
+        }
+      }
+    }
+    .turn {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      height: 50px;
+      width: 50px;
+      margin-top: -25px;
+      background: url('../../image/arrow-right-white.png') center no-repeat;
+    }
+  }
+  .links-list {
+    padding: 20px 0;
+    background-color: #fff;
+    .item {
+      height: 80px;
+      .money {
+        background: #fff url('../../image/phone-white.png') 0 0 no-repeat;
+      }
+      .quan {
+
+      }
+      .commit {
+
+      }
+    }
+    .item + .item  {
+      border-left: 1px solid #ccc;
+    }
+  }
+  
 }
