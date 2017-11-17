@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-17 16:32:24
+* @Last Modified time: 2017-11-17 23:22:06
 */
 $green: #3dbd95;
 $grey: #f0f0f0;
@@ -22,6 +22,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 input {
   outline: none;
+}
+a:hover, a:focus, a:active {
+  text-decoration: none;
 }
 
 .text-green {
@@ -65,7 +68,7 @@ input {
       position: absolute;
       right: 20px;
       top: 18px;
-      color: #d7d7d7;
+      color: #f6f6f6;
     }
   }
 }
@@ -191,7 +194,12 @@ input {
 
 // 个人中心
 .user-wraper {
-  margin-top: -11px;
+  position: absolute;
+  top: 55px;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
   .user-top {
     position: relative;
     padding: 30px 10px;
@@ -221,7 +229,7 @@ input {
         }
         .phone {
           padding-left: 20px;
-          background: transparent url('../../image/phone-white.png') 0 0 no-repeat;
+          background: transparent url('../../image/icon6.png') -4px -148px no-repeat;
         }
       }
     }
@@ -232,27 +240,93 @@ input {
       height: 50px;
       width: 50px;
       margin-top: -25px;
-      background: url('../../image/arrow-right-white.png') center no-repeat;
+      background: url('../../image/icon6.png') center -410px no-repeat;
     }
   }
   .links-list {
     padding: 20px 0;
     background-color: #fff;
     .item {
-      height: 80px;
-      .money {
-        background: #fff url('../../image/phone-white.png') 0 0 no-repeat;
+      height: 65px;
+      padding-top: 45px;
+      font-size: 16px;
+      color: #333;
+      background: #fff url('../../image/icon7.png') no-repeat;
+      &.money {
+        background-position: center -74px;
       }
-      .quan {
-
+      &.quan {
+        background-position: center -152px;
       }
-      .commit {
-
+      &.commit {
+        background-position: center 4px;
       }
     }
     .item + .item  {
-      border-left: 1px solid #ccc;
+      border-left: 1px solid #ddd;
+    }
+  }
+  .user-content {
+    margin: 10px 0;
+    font-size: 16px;
+    .groups {
+      background-color: #fff;
+      .item {
+        display: block;
+        padding: 15px 0 15px 60px;
+        color: #333;
+        background:transparent url('../../image/icon2.png') no-repeat;
+        & + .item {
+          border-top: 1px solid #eee;
+        }
+      }
+    }
+    .groups + .groups {
+      margin-top: 10px;
     }
   }
   
+}
+
+// 个人中心底部菜单
+.user-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 70px;
+  font-size: 16px;
+  background-color: #f6f6f6;
+  border-top: 1px solid #d7d7d7;
+  .item {
+    color: #333;
+    height: 30px;
+    padding-top: 40px;
+    background: transparent url('../../image/icon4.png') no-repeat;
+    &.home {
+      background-position: center -140px;
+    }
+    &.home-active, &.home:focus {
+      background-position: center -90px;
+    }
+    &.kinds {
+      background-position: center -188px;
+    }
+    &.kinds-active, &.kinds:focus {
+      background-position: center -237px;
+    }
+    &.order {
+      background-position: center 9px;
+    }
+    &.order-active, &.order:focus {
+      background-position: center -41px;
+    }
+    &.my {
+      background-position: center -339px;
+    }
+    &.my-active, &.my:focus {
+      background-position: center -289px;
+    }
+    
+  }
 }

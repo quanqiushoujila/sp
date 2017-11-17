@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:06:11
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-17 17:00:21
+* @Last Modified time: 2017-11-17 22:10:27
 */
 'use strict';
 // 通用方法
@@ -60,7 +60,7 @@ var _bm = {
 
 
 // 登录注册找回密码
-var _logValid = {
+var _log = {
   init: function () {
     this.bindEvent();
   },
@@ -292,6 +292,6 @@ var _logValid = {
 
 
 $(function() {
-  _logValid.init();
+  _log.init();
 
 });
