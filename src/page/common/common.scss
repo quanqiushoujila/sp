@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-17 23:22:06
+* @Last Modified time: 2017-11-18 21:17:46
 */
 $green: #3dbd95;
 $grey: #f0f0f0;
@@ -36,7 +36,49 @@ a:hover, a:focus, a:active {
   white-space: nowrap;
 }
 
+.center-content {
+  position: absolute;
+  top: 70px;
+  bottom: 70px;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+}
 
+
+//头部搜索框
+.search-wrapper {
+  background-color: #fff;
+  height: 70px;
+  &.search-type-one {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 10;
+  }
+  padding: 15px 20px;
+  
+  position: relative;
+  .search-text {
+    width: 100%;
+    border: none;
+    height: 40px;
+    border-radius:40px;
+    padding: 0 10px 0 40px;
+    line-height: 40px;
+    margin-bottom: 0;
+    background: #eee url('../../image/icon6.png') 10px -1077px no-repeat;
+  }
+  /* .btn-search {
+    position: absolute;
+    top: 17px;
+    left: 20px;
+    height: 35px;
+    width: 45px;
+    background: transparent url('../../image/icon6.png') center -1077px no-repeat;
+  } */
+}
 
 // 登录注册头部
 .top-wrap{
@@ -80,7 +122,7 @@ a:hover, a:focus, a:active {
     display: block;
     border: 0px;
     padding: 22px 20px 22px 40px;
-    font-size: 16px;
+    font-size: 1em;
   }
   .input-type {
     background:#fff url('../../image/icon3.png') no-repeat;
@@ -225,7 +267,7 @@ a:hover, a:focus, a:active {
           width: 100%; 
         }
         .name {
-          font-size: 16px;
+          font-size: 1em;
         }
         .phone {
           padding-left: 20px;
@@ -249,7 +291,7 @@ a:hover, a:focus, a:active {
     .item {
       height: 65px;
       padding-top: 45px;
-      font-size: 16px;
+      font-size: 1em;
       color: #333;
       background: #fff url('../../image/icon7.png') no-repeat;
       &.money {
@@ -268,10 +310,11 @@ a:hover, a:focus, a:active {
   }
   .user-content {
     margin: 10px 0;
-    font-size: 16px;
+    font-size: 1em;
     .groups {
       background-color: #fff;
       .item {
+        position:relative;
         display: block;
         padding: 15px 0 15px 60px;
         color: #333;
@@ -279,6 +322,35 @@ a:hover, a:focus, a:active {
         & + .item {
           border-top: 1px solid #eee;
         }
+        .icon {
+          height: 40px;
+          width: 50px;
+          position: absolute;
+          right: 0px;
+          top: 10px;
+          background: #fff url('../../image/icon6.png') center -1040px no-repeat;
+        }
+      }
+      .item1 {
+        background-position: 15px 10px;
+      }
+      .item2 {
+        background-position: 15px -37px;
+      }
+      .item3 {
+        background-position: 15px -82px;
+      }
+      .item4 {
+        background-position: 15px -130px;
+      }
+      .item5 {
+        background-position: 15px -174px;
+      }
+      .item6 {
+        background-position: 15px -223px;
+      }
+      .item7 {
+        background-position: 15px -267px;
       }
     }
     .groups + .groups {
@@ -288,14 +360,14 @@ a:hover, a:focus, a:active {
   
 }
 
-// 个人中心底部菜单
+// 底部菜单
 .user-footer {
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
   height: 70px;
-  font-size: 16px;
+  font-size: 1em;
   background-color: #f6f6f6;
   border-top: 1px solid #d7d7d7;
   .item {
@@ -328,5 +400,278 @@ a:hover, a:focus, a:active {
       background-position: center -289px;
     }
     
+  }
+}
+
+// 轮播图
+.swiper-slide {
+  a {
+    display: block;
+  }
+}
+.swiper-pagination-bullet-active {
+  background-color: $green;
+}
+.swiper-container-horizontal>.swiper-pagination-bullets {
+  bottom: 0px;
+}
+
+// 首页月嫂类型
+.menu-wrap {
+  background-color: #fff;
+  padding: 20px 0;
+  .item {
+    display: block;
+    float: left;
+    width: 20%;
+    color: #333;
+    font-size: 1em;
+    .icon {
+      display: block;
+      width: 100%;
+      height: 60px;
+      background: transparent url('../../image/1.png') no-repeat;
+    }
+    .text {
+      display: block;
+      padding: 5px 0;
+    }
+    &:focus {
+      color: $green;
+    }
+    &.item1 .icon {
+      background-position: center -245px;
+    }
+    &.item2 .icon {
+      background-position: center -177px;
+    }
+    &.item3 .icon {
+      background-position: center -309px;
+    }
+    &.item4 .icon {
+      background-position: center -371px;
+    }
+    &.item5 .icon {
+      background-position: center -46px;
+    }
+    &.item6 .icon {
+      background-position: center -497px;
+    }
+    &.item7 .icon {
+      background-position: center -562px;
+    }
+    &.item8 .icon {
+      background-position: center -110px;
+    }
+    &.item9 .icon {
+      background-position: center 20px;
+    }
+    &.item10 .icon {
+      background-position: center -432px;
+    }
+  }
+}
+
+// 首页功能模块
+.function {
+  background-color: #fff;
+  margin-top: 10px;
+  padding: 10px 0;
+  .text-content {
+    padding: 0 15px 10px 15px;
+    .text {
+      float: left;
+      font-size: 1em;
+      font-weight: 700;
+    }
+    .small-text {
+      float: right;
+      font-size: 0.75em;
+      color: #999;
+      margin-top: 3px;
+    }
+  }
+  .function-list {
+    .item {
+      width: 20%;
+      float: left;
+      padding: 0px 0 10px;
+      font-size: 1em;
+      color: #333;
+      .icon {
+        display: block;
+        height: 60px;
+        width: 100%;
+        background: transparent url('../../image/3.png') no-repeat;
+      }
+      &:focus .name {
+        color: $green;
+      }
+    }
+    .item1 .icon {
+      background-position: center 15px;
+    }
+    .item2 .icon {
+      background-position: center -189px;
+    }
+    .item3 .icon {
+      background-position: center -122px;
+    }
+    .item4 .icon {
+      background-position: center -54px;
+    }
+    .item5 .icon {
+      background-position: center -256px;
+    }
+    
+  }
+}
+
+.ad {
+  margin-top: 10px;
+}
+
+// 推荐阿姨
+.recommend-aunts {
+  margin-top: 10px;
+  background-color: #fff;
+  .title {
+    padding: 5px 0 0 0;
+    margin-bottom: 0;
+    color: #999;
+    .text {
+      padding:10px 0px 10px 35px;
+      display: inline-block;
+      background: transparent url('../../image/icon6.png')  0px -1123px no-repeat;
+    }
+  }
+  .aunts-list {
+    background-color: $grey;
+    .item {
+      display: block;
+      width: 100%;
+      background-color: #fff;
+      padding: 10px 15px;
+      border-bottom: 1px solid #ddd;
+      border-top: 1px solid #ddd;
+      &:focus {
+        border-color: $green;
+      }
+      .img {
+        width: 75px;
+        height: 100px;
+      }
+      .info {
+        position: relative;
+        .star {
+          display: inline-block;
+          width: 89px;
+          height: 16px;
+          background: #fff url('../../image/icon-star.png') 0px 4px no-repeat;
+          &.star1 {
+            background-position: 0 4px;
+          }
+          &.star2 {
+            background-position: 0 -16px;
+          }
+          &.star3 {
+            background-position: 0 -36px;
+          }
+          &.star4 {
+            background-position: 0 -54px;
+          }
+          &.star5 {
+            background-position: 0 -74px;
+          }
+        }
+        .status {
+          font-size: 1em;
+          color: #999;
+          &.active {
+            color: $green;
+          }
+        }
+        .money {
+          position: absolute;
+          top: 0px;
+          right: 0px;
+          color: #ff7452;
+          font-weight: 700;
+          font-size: 1.2em;
+          float: right;
+        }
+      }
+      .detail {
+        margin: 10px 0;
+        font-size: 1em;
+        color: #666;
+        span:first-child {
+          margin-left: 0;
+          padding-left: 0;
+        }
+        span {
+          float: left;
+          margin: 7px 0;
+          padding: 0 7px;
+          & + span {
+            border-left: 1px solid #ccc;
+          }
+        }
+      }
+      .boxes {
+        .small-box {
+          padding: 0 5px;
+          border-radius: 5px;
+          background-color: $grey;
+          color: #999;
+        }
+      }
+    }
+    .item + .item {
+      margin-top: 10px;
+    }
+    .content {
+      margin-left: 10px;
+      width: calc(100% - 90px);
+      .name {
+        font-size: 1.2em;
+        font-weight: 700;
+        color: #333;
+      }
+    }
+  }
+  .underline {
+    background-color: $grey;
+    padding: 15px 0;
+    color: #999;
+    position: relative;
+    .line {
+      display: inline-block;
+      margin: 0px auto;
+      height: 1px;
+      width: 70%;
+      border: 1px solid #ccc;
+      position: absolute;
+      top: 18px;
+      left: 15%;
+    }
+    .text {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -60px;
+      margin-top: -6px;
+      width: 120px;
+      background-color: $grey;
+    }
+  }
+}
+@media (max-width: 320px) {
+  .function {
+    .function-list {
+      .item {
+        font-size: 0.75em;
+      }
+    }
   }
 }
