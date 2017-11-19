@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-17 16:11:47
+* @Last Modified time: 2017-11-19 19:14:40
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -51,7 +51,7 @@ var config = {
         loaders: [
             {test: /\.css$/, loader: ExtractTextPlugin.extract("style-loader","css-loader") },
             {test: /\.scss$/,loader: ExtractTextPlugin.extract("style", 'css!sass')},
-            {test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=8192&name=images/[name].[ext]' },
+            {test: /\.(gif|png|jpg|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=100&name=images/[name].[ext]' },
             {test: /\.string$/, loader: 'html-loader'}
         ]
         /*rules: [
@@ -111,7 +111,7 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('register', '注册')),
         new HtmlWebpackPlugin(getHtmlConfig('forgetPassword', '找回密码')),
         new HtmlWebpackPlugin(getHtmlConfig('userCenter', '个人中心')),
-        // new HtmlWebpackPlugin(getHtmlConfig('user-register', '用户注册')),
+        new HtmlWebpackPlugin(getHtmlConfig('list', '保姆列表页')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),

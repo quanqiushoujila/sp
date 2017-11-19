@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-18 22:30:52
+* @Last Modified time: 2017-11-19 19:27:16
 */
 $green: #3dbd95;
 $grey: #f0f0f0;
@@ -44,6 +44,10 @@ a:hover, a:focus, a:active {
   right: 0;
   overflow-y: auto;
   z-index: 1;
+  &.center-content-list {
+    top: 115px;
+    top: 150px;
+  }
 }
 
 
@@ -60,7 +64,13 @@ a:hover, a:focus, a:active {
     right: 0;
     z-index: 10;
   }
+
   &.search-type-two {
+    &.search-type-three {
+      display: block;
+      bottom: calc(100% - 70px);
+      height: auto;
+    }
     display: none;
     padding-top: 0;
     padding-bottom: 0;
@@ -75,13 +85,21 @@ a:hover, a:focus, a:active {
     padding-left: 0;
     padding-right: 0;
     .search {
-      margin-left: 20px;
-      width: calc(100% - 100px);
+      margin-left: 50px;
+      width: calc(100% - 110px);
+    }
+    .back {
+      position: absolute;
+      top: 20px;
+      left: 10px;
+      height: 30px;
+      width: 30px;
+      background: #fff url('../../image/icon6.png') 0px -300px no-repeat;
     }
     .cancle {
       font-size: 1.2em;
       color: #333;
-      margin-left: 15px;
+      margin-left: 5px;
       &:focus {
         color: $green;
       }
@@ -730,6 +748,46 @@ a:hover, a:focus, a:active {
   }
 }
 
+// 列表页筛选
+.sort-wrap {
+  position: absolute;
+  top: 71px;
+  left: 0;
+  right: 0;
+  height: 45px;
+  line-height: 45px;
+  background-color: #fff;
+  border-bottom: 1px solid #ccc;
+  .sort-list {
+    .item {
+      span {
+        display: inline-block;
+        padding: 0 25px 0 15px;
+        height: 44px;
+        background: #fff url('../../image/6.png') 48px 21px no-repeat;
+      }
+    }
+  }
+  .type-list {
+    .small-box {
+      margin-top: 10px;
+      border-radius: 5px;
+      font-size: .875em;
+      height: 25px;
+      line-height: 24px;
+      padding: 0px 5px 0px 5px;
+      margin-left: 10px;
+      background-color: #fff;
+      .icon {
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        background: #fff url('../../image/6.png') 2px -62px no-repeat;
+      }
+    }
+  }
+}
+
 @media (max-width: 320px) {
   .function {
     .function-list {
@@ -737,5 +795,8 @@ a:hover, a:focus, a:active {
         font-size: 0.75em;
       }
     }
+  }
+  .sort-wrap .sort-list .item span {
+    font-size: .875em;
   }
 }
