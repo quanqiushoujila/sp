@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:06:11
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-17 17:00:21
+* @Last Modified time: 2017-11-19 19:32:44
 */
 'use strict';
 // 通用方法
@@ -60,7 +60,7 @@ var _bm = {
 
 
 // 登录注册找回密码
-var _logValid = {
+var _log = {
   init: function () {
     this.bindEvent();
   },
@@ -290,8 +290,45 @@ var _logValid = {
   },
 };
 
+// 搜索
+var _search = {
+  init: function () {
+    this.bindEvent();
+  },
+
+  bindEvent: function () {
+    // 取消按钮
+    $('.cancle-index, .back-index').click(function () {
+      $('.input-search').val('');
+      $('.search-type-two').hide();
+      //$('.input-search').removeAttr('autofocus');
+    });
+
+    // 搜索按钮
+    $('.search-text').click(function (){
+      $('.search-type-two').show();
+      $('.input-search').trigger("focus");
+    });
+
+  }
+};
+
+//分类筛选
+var _sort = {
+  init: function () {
+    this.bindEvent();
+  },
+
+  bindEvent: function () {
+    $('.type-small-box').click(function () {
+      $(this).remove();
+    });
+  }
+}
 
 $(function() {
-  _logValid.init();
-
+  _log.init();
+  _search.init();
+  _sort.init();
+  $("img.lazyload").lazyload();
 });

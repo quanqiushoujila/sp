@@ -22,20 +22,31 @@
       <a href="#" class="turn"></a>
     </div>
     <div class="links-list clearfix">
-      <a href="#" class="col-xs-4 item money">
-        
+      <a href="#" class="col-xs-4 item money text-center">
+        我的钱包
       </a>
-      <a href="#" class="col-xs-4 item quan">
-        
+      <a href="#" class="col-xs-4 item quan text-center">
+        我的优惠券
       </a>
-      <a href="#" class="col-xs-4 item commit">
-        
+      <a href="#" class="col-xs-4 item commit text-center">
+        我的评价
       </a>
     </div>
     <div class="user-content">
-      
+      <div class="groups">
+        <a href="#" class="item item1">我的订单<i class="icon"></i></a>
+        <a href="#" class="item item2">我的预约<i class="icon"></i></a>
+        <a href="#" class="item item3">常用地址<i class="icon"></i></a>
+        <a href="#" class="item item4">我的收藏<i class="icon"></i></a>
+      </div>
+      <div class="groups">
+        <a href="#" class="item item5">设置<i class="icon"></i></a>
+        <a href="#" class="item item6">常见问题<i class="icon"></i></a>
+        <a href="#" class="item item7">关于我们<i class="icon"></i></a>
+      </div>
     </div>
   </div>
+  <%= require('html-loader!./layout/userFooter.html') %>
   <%= require('html-loader!./layout/footer.html') %>
 </body>
 </html>

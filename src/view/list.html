@@ -1,118 +1,24 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <%= require('html-loader!./layout/html-common.html') %>
+  <%= require('html-loader!./layout/html-common1.html') %>
   <title><%= htmlWebpackPlugin.options.title%></title>
 </head>
 <body>
-  <div class="search-wrapper search-type-one">
-    <p class="search-text">搜索商家、服务</p>
+  <!-- 搜索 -->
+  <div class="search-wrapper search-type-two search-type-three">
+    <div class="search-container">
+      <a href="./index.html" class="back back-two"></a>
+      <input type="text" class="search input-search" placeholder="搜索商家、服务" >
+      <a href="javascript:void(0);" class="cancle cancle-list" id="cancle">取消</a>
+    </div>
   </div>
-  <div class="center-content">
-    <!-- 轮播图 -->
-    <div class="swiper-container">
-      <div class="swiper-wrapper">
-          <div class="swiper-slide">
-            <a href="#">
-              <img width="100%" src="<%= require('../image/banner.png') %>" alt="banner">
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="#">
-              <img width="100%" src="<%= require('../image/banner.png') %>" alt="banner">
-            </a>
-          </div>
-          <div class="swiper-slide">
-            <a href="#">
-              <img width="100%" src="<%= require('../image/banner.png') %>" alt="banner">
-            </a>
-          </div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-    <!-- 月嫂类型 -->
-    <div class="menu-wrap clearfix">
-      <a href="./list.html" class="text-center item item1">
-        <span class="icon"></span>
-        <span class="text">月嫂</span>
-      </a>
-      <a href="./list.html" class="text-center item item2">
-        <span class="icon"></span>
-        <span class="text">育儿师</span>
-      </a>
-      <a href="./list.html" class="text-center item item3">
-        <span class="icon"></span>
-        <span class="text">保姆</span>
-      </a>
-      <a href="./list.html" class="text-center item item4">
-        <span class="icon"></span>
-        <span class="text">保洁</span>
-      </a>
-      <a href="./list.html" class="text-center item item5">
-        <span class="icon"></span>
-        <span class="text">钟点工</span>
-      </a>
-      <a href="./list.html" class="text-center item item6">
-        <span class="icon"></span>
-        <span class="text">搬家</span>
-      </a>
-      <a href="./list.html" class="text-center item item7">
-        <span class="icon"></span>
-        <span class="text">辅导</span>
-      </a>
-      <a href="./list.html" class="text-center item item8">
-        <span class="icon"></span>
-        <span class="text">维修</span>
-      </a>
-      <a href="./list.html" class="text-center item item9">
-        <span class="icon"></span>
-        <span class="text">生活服务</span>
-      </a>
-      <a href="./list.html" class="text-center item item10">
-        <span class="icon"></span>
-        <span class="text"> 全部</span>
-      </a>
-    </div>
-
-    <!-- 功能 -->
-    <div class="function">
-      <div class="text-content clearfix">
-        <span class="text">即可达</span>
-        <span class="small-text">最快30分钟上门</span>
-      </div>
-      <div class="function-list clearfix text-center">
-        <a href="#" class="item item1">
-          <span class="icon"></span>
-          <span class="name">家庭维修</span>
-        </a>
-        <a href="#" class="item item2">
-          <span class="icon"></span>
-          <span class="name">开锁换锁</span>
-        </a>
-        <a href="#" class="item item3">
-          <span class="icon"></span>
-          <span class="name">管道疏通</span>
-        </a>
-        <a href="#" class="item item4">
-          <span class="icon"></span>
-          <span class="name">汽车抢修</span>
-        </a>
-        <a href="#" class="item item5">
-          <span class="icon"></span>
-          <span class="name">装修小工</span>
-        </a>
-      </div>
-    </div>
-    <!-- 广告 -->
-    <div class="ad">
-      <img src="<%= require('../image/banner2.png') %>" alt="" width="100%">
-    </div>
+  <%= require('html-loader!./layout/sort.html') %>
+  <div class="center-content center-content-list">
     <!-- 推荐阿姨 -->
-    <div class="recommend-aunts">
-      <p class="title text-center"><span class="text">推荐阿姨</span></p>
+    <div class="recommend-aunts recommend-aunts-lists">
       <div class="aunts-list">
         <a href="#" class="item clearfix">
-          <!-- <img class="lazyload pull-left img" data-src="<%= require('../image/avatar.png') %>" width="75" height="100"> -->
           <img src="<%= require('../image/avatar.png') %>" alt="" class="pull-left img">
           <div class="content pull-left">
             <div class="info">
@@ -229,18 +135,8 @@
       </div>
     </div>
   </div>
-  <%= require('html-loader!./layout/search.html') %>
   <%= require('html-loader!./layout/userFooter.html') %>
-  <%= require('html-loader!./layout/footer.html') %>
-  <script>
-    var mySwiper = new Swiper('.swiper-container', {
-      autoplay: 5000,//可选选项，自动滑动
-      pagination: {
-        el: '.swiper-pagination',
-      },
-      loop: true,
-      bulletActiveClass: 'my-bullet-active',
-    })
-  </script>
+  <%= require('html-loader!./layout/footer1.html') %>
+
 </body>
 </html>
