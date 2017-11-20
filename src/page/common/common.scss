@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-20 09:00:47
+* @Last Modified time: 2017-11-20 22:57:31
 * @Last Modified time: 2017-11-19 19:27:16
 */
 $green: #3dbd95;
@@ -46,8 +46,8 @@ a:hover, a:focus, a:active {
   overflow-y: auto;
   z-index: 1;
   &.center-content-list {
-    top: 115px;
-    top: 160px;
+    top: 125px;
+    // top: 160px;
   }
 }
 
@@ -117,8 +117,9 @@ a:hover, a:focus, a:active {
             margin-bottom: 10px;
             padding: 0 5px;
             &:focus .box{
-              color: $green;
-              border-color: $green
+              background-color: $green;
+              border-color: $green;
+              color: #fff;
             }
           }
           .box {
@@ -764,6 +765,9 @@ a:hover, a:focus, a:active {
   border-bottom: 1px solid #ccc;
   .sort-list {
     .item {
+      & + .item {
+        border-left: 1px solid #ccc;
+      }
       span {
         display: inline-block;
         padding: 0 20px 0 11px;
@@ -788,6 +792,48 @@ a:hover, a:focus, a:active {
         height: 15px;
         width: 15px;
         background: #fff url('../../image/6.png') 2px -62px no-repeat;
+      }
+    }
+  }
+  .type-wrap {
+    display: none;
+  }
+  .choose-type {
+    display: block;
+  }
+  .search-wrapper {
+    height: auto;
+    line-height: 1.2;
+  }
+  .shadow-wrap {
+    display: -none;
+    position: absolute;
+    top: 45px;
+    left: 0;
+    right: 0;
+    z-index: 25;
+    width: 100%;
+    height: calc(100vh - 186px);
+    background-color: rgba(0, 0, 0, .4);
+    .type-wrap {
+      max-height: calc(100vh - 186px);
+      overflow-y: auto;
+      background-color: #fff;
+      position: relative;
+      z-index: 30;
+      .item {
+        padding: 5px 15px;
+        display: block;
+        height: auto;
+        line-height: 2;
+        color: #333;
+        &.success-green {
+          color: $green;
+          background: #fff url('../../image/icon6.png') 95% -912px no-repeat;
+        }
+        & + .item {
+          border-top: 1px solid #ccc;
+        }
       }
     }
   }
