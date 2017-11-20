@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:06:11
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-19 19:32:44
+* @Last Modified time: 2017-11-20 10:04:35
 */
 'use strict';
 // 通用方法
@@ -43,7 +43,7 @@ var _bm = {
       type:       param.type      || 'get',
       success:    function (res) {
         if (Config.status.SUCCESS === res.status) {
-          typeof param.success === 'function' && param.success(res);
+          typeof param.success === 'fnuction' && param.success(res);
 
         } else if (Config.status.ERROR === res.status) {
           typeof param.error === 'function' && param.error(res.msg);
@@ -330,5 +330,5 @@ $(function() {
   _log.init();
   _search.init();
   _sort.init();
-  $("img.lazyload").lazyload();
+  //$("img.lazyload").lazyload();
 });

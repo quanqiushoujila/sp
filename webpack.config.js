@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-19 19:14:40
+* @Last Modified time: 2017-11-20 12:27:27
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -72,7 +72,9 @@ var config = {
             image           : __dirname + '/src/image',
             js              : __dirname + '/src/js',
             scss            : __dirname + '/src/scss',
-            page            : __dirname + '/src/page'
+            page            : __dirname + '/src/page',
+            json            : __dirname + '/src/json',
+
         }
     },
     postcss: [
