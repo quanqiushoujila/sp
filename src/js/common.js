@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:06:11
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-20 10:04:35
+* @Last Modified time: 2017-11-23 20:57:02
 */
 'use strict';
 // 通用方法
@@ -317,13 +317,95 @@ var _search = {
 var _sort = {
   init: function () {
     this.bindEvent();
+    this.onLoad();
   },
 
   bindEvent: function () {
+    var _this = this;
     $('.type-small-box').click(function () {
+      var oldTypeListHeight = $('.sort-wrap .type-list').height();
       $(this).remove();
+      var listTop = $('.center-content-list').offset().top;
+      var newTypeListHeight = $('.sort-wrap .type-list').height();
+      $('.center-content-list').animate({
+        'top': listTop - (oldTypeListHeight - newTypeListHeight)
+        },
+        200
+        );
     });
-  }
+
+    // 排序
+    $('.sort-wrap .sort-list .item').click(function (event) {
+      var index = $(this).index();
+      _this.removeChooseActiveClassName();
+      $('.shadow-wrap').show().find('.type-wrap').eq(index).show().siblings('.type-wrap').hide();
+    });
+
+    // 排序选择 
+    $('.shadow-wrap .type-wrap .item').click(function (event) {
+      event.stopPropagation();
+      $(this).addClass('success-green').siblings('.item').removeClass('success-green')
+          .parent().siblings('.type-wrap').find('.item').removeClass('success-green');
+      
+      _this.hideShadowList();
+      
+    });
+
+    // 保姆列表页取消
+    $('.cancle-list').click(function () {
+      _this.hideShadowList();
+    });
+
+    $('.input-search-list').focus(function () {
+      _this.hideShadowList();
+    });
+
+    $('.shadow-wrap').click(function (event) {
+      _this.hideShadowList();
+    });
+
+    $('.choose-type').click(function (event) {
+      event.stopPropagation();
+    });
+
+    // 筛选
+    $('.sort-wrap .item-sort').click(function () {
+      _this.removeListActiveClassName();
+      $(this).toggleClass('green-active').siblings('.item-sort').removeClass('green-active');
+    });
+
+    //筛选确定
+    $('.sort-wrap .btn-list-ok').click(function () {
+      _this.hideShadowList();
+    });
+
+    //筛选取消
+    $('.sort-wrap .btn-list-cancle').click(function () {
+      _this.hideShadowList();
+    });
+
+  },
+
+  hideShadowList: function () {
+    $('.shadow-wrap').fadeOut(600);
+  },
+
+  removeListActiveClassName: function () {
+    $('.sort-wrap .shadow-wrap .type-wrap .item').removeClass('success-green').parent()
+      .siblings('.type-wrap').find('.item').removeClass('success-green');
+  },
+
+  removeChooseActiveClassName: function () {
+    $('.sort-wrap .choose-type .item-sort').removeClass('green-active');
+  },
+
+  onLoad: function () {
+    var listTop = $('.center-content-list').offset().top;
+    var typeListHeight = $('.sort-wrap .type-list').height();
+    $('.center-content-list').css('top', listTop + typeListHeight);
+    // console.log('top', listTop + typeListHeight);
+    // console.log('typeListHeight', typeListHeight);
+  },
 }
 
 $(function() {
