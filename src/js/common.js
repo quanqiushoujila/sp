@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:06:11
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-23 20:57:02
+* @Last Modified time: 2017-11-24 16:13:23
 */
 'use strict';
 // 通用方法
@@ -337,7 +337,6 @@ var _sort = {
     // 排序
     $('.sort-wrap .sort-list .item').click(function (event) {
       var index = $(this).index();
-      _this.removeChooseActiveClassName();
       $('.shadow-wrap').show().find('.type-wrap').eq(index).show().siblings('.type-wrap').hide();
     });
 
@@ -400,9 +399,11 @@ var _sort = {
   },
 
   onLoad: function () {
-    var listTop = $('.center-content-list').offset().top;
-    var typeListHeight = $('.sort-wrap .type-list').height();
-    $('.center-content-list').css('top', listTop + typeListHeight);
+    if ($('.center-content-list').length > 0) {
+      var listTop = $('.center-content-list').offset().top;
+      var typeListHeight = $('.sort-wrap .type-list').height();
+      $('.center-content-list').css('top', listTop + typeListHeight);
+    }
     // console.log('top', listTop + typeListHeight);
     // console.log('typeListHeight', typeListHeight);
   },

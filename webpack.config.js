@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-20 17:26:29
+* @Last Modified time: 2017-11-24 16:07:12
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -115,7 +115,7 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('forgetPassword', '找回密码')),
         new HtmlWebpackPlugin(getHtmlConfig('userCenter', '个人中心')),
         new HtmlWebpackPlugin(getHtmlConfig('list', '保姆列表页')),
-        // new HtmlWebpackPlugin(getHtmlConfig('user-pass-reset', '找回密码')),
+        new HtmlWebpackPlugin(getHtmlConfig('all', '所有保姆')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-center', '个人中心')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
         // new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),

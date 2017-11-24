@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-23 20:10:16
+* @Last Modified time: 2017-11-24 17:21:09
 * @Last Modified time: 2017-11-19 19:27:16
 */
 $green: #3dbd95;
@@ -60,6 +60,9 @@ a:hover, a:focus, a:active {
 }
 
 .center-content {
+  &.all-center-content {
+    position: inherit;
+  }
   position: absolute;
   top: 70px;
   bottom: 70px;
@@ -641,6 +644,14 @@ a:hover, a:focus, a:active {
   &.recommend-aunts-lists {
     margin-top: 0;
   }
+  &.all-recommend-aunts {
+    .title {
+      font-size: 1.2em;
+      color: #333;
+      padding: 10px 15px;
+      font-weight: 700;
+    }
+  }
   margin-top: 10px;
   background-color: #fff;
   .title {
@@ -899,6 +910,60 @@ a:hover, a:focus, a:active {
   }
 }
 
+// 所有保姆页
+.all-top-wrapper {
+  padding: 10px 15px;
+  background-color: #fff;
+  .content {
+    position: relative;
+    .avatar {
+      height:70px;
+      width: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      text-align: center;
+      margin-right: 10px;
+      img {
+        width: 100%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+    .detail {
+      width: calc(100% - 140px);
+      
+      .company-name {
+        font-size: 1.5em;
+        color: #333;
+        font-weight: 700;
+      }
+      .info {
+        font-size: .875em;
+        color: #999;
+      }
+      .number {
+        color: $green;
+        margin:0 10px 0 5px;
+      }
+      .focus {
+        background-color: #f00;
+        position: absolute;
+        width: 40px;
+        height: 20px;
+        padding-top: 40px;
+        top: 50%;
+        right: 10px;
+        margin-left: -20px;
+        margin-top: -30px;
+        color: #333;
+      }
+    }
+  }
+  .desc {
+    margin: 10px 0 0;
+    font-size: 1.1em;
+  }
+}
 
 @media (max-width: 375px) {
 
