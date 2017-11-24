@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:06:11
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-24 16:13:23
+* @Last Modified time: 2017-11-24 21:33:57
 */
 'use strict';
 // 通用方法
@@ -409,9 +409,22 @@ var _sort = {
   },
 }
 
+var _bind = {
+  init: function () {
+    this.bindEvent();
+  },
+
+  bindEvent: function () {
+    $('.all-top-wrapper .focus').click(function(event) {
+      $(this).toggleClass('success-green');
+    });
+  }
+}
+
 $(function() {
   _log.init();
   _search.init();
   _sort.init();
+  _bind.init();
   //$("img.lazyload").lazyload();
 });

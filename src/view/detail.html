@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <%= require('html-loader!./layout/html-common1.html') %>
+  <title><%= htmlWebpackPlugin.options.title%></title>
+</head>
+<body>
+  <div class="detail-wrap">
+    <div class="top"></div>
+    <div class="base-info base">
+      <p class="title">基本信息</p>
+      <div class="clearfix">
+        <p class="col-xs-6 text-overflow text-left">
+          编号：zzzzzzzz
+        </p>
+        <p class="col-xs-6 text-overflow text-left">
+          手机号：12345678909
+        </p>
+        <p class="col-xs-6 text-overflow text-left">
+          年龄：11
+        </p>
+        <p class="col-xs-6 text-overflow text-left">
+          婚姻：已婚
+        </p>
+        <p class="col-xs-6 text-overflow text-left">
+          民族：汉
+        </p>
+        <p class="col-xs-6 text-overflow text-left">
+          籍贯：舟山
+        </p>
+        <p class="col-xs-6 text-overflow text-left">
+          星座：摩羯
+        </p>
+        <p class="col-xs-6 text-overflow text-left">
+          宗教：佛教
+        </p>
+        <p class="col-xs-6 text-overflow text-left">
+          身高：111
+        </p>
+        <p class="col-xs-6 text-overflow text-left">
+          属相：狗
+        </p>
+        <p class="col-xs-6 text-overflow text-left">
+          学历：高中
+        </p>
+        <p class="col-xs-6 text-overflow text-left">
+          体重：11kg
+        </p>
+      </div>
+    </div>
+    <div class="server base">
+      <p class="title">服务能力</p>
+      <div class="server-wrap clearfix">
+        <div class="col-xs-3 item item1 text-center">
+          <span class="icon"></span>
+          月嫂
+        </div>
+        <div class="col-xs-3 item item2 text-center">
+          <span class="icon"></span>
+          带小孩
+        </div>
+        <div class="col-xs-3 item item3 text-center">
+          <span class="icon"></span>
+          烧饭
+        </div>
+        <div class="col-xs-3 item item4 text-center">
+          <span class="icon"></span>
+          买菜
+        </div>
+        <div class="col-xs-3 item item5 text-center">
+          <span class="icon"></span>
+          洗衣
+        </div>
+        <div class="col-xs-3 item item6 text-center">
+          <span class="icon"></span>
+          卫生保洁
+        </div>
+        <div class="col-xs-3 item item7 text-center">
+          <span class="icon"></span>
+          老人看护
+        </div>
+        <div class="col-xs-3 item item8 text-center">
+          <span class="icon"></span>
+          病患护理
+        </div>
+      </div>
+    </div>
+    <div class="job base">
+      <p class="title">持有证书与技能</p>
+      <div class="content-wrap job-wrap">
+        <span class="item">健康证</span>
+        <span class="item">育婴师证</span>
+      </div>
+    </div>
+    <div class="desc base">
+      <p class="title">自我介绍</p>
+      <div class="content-wrap">
+        <p class="info">自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍</p>
+        <img src="<%= require('../image/img.jpg') %>" width="100%" alt="" class="img">
+      </div>
+    </div>
+    <div class="commit base">
+      <p class="title">雇主评价（102）</p>
+      <a href="#" class="btn-all">查看全部></a>
+      <div class="">
+        <div class="tag-list">
+          <span class="tag">勤快（11）</span>
+          <span class="tag">勤快（11）</span>
+          <span class="tag">勤快（11）</span>
+        </div>
+        <div class="content-container">
+          <div class="item">
+            <div class="info clearfix">
+              <div class="avatar pull-left">
+                <img src="<%= require('../image/avatar.png') %>" alt="" width="100%;">
+              </div>
+              <p class="name pull-left">名字</p>
+              <p class="date pull-right">2017.01.01</p>
+            </div>
+            <p class="star">打分<span class="icon icon1"></span></p>
+            <p class="detail">好好好好好好好好好好好好好好好好好好</p>
+          </div>
+          <div class="item">
+            <div class="info clearfix">
+              <div class="avatar pull-left">
+                <img src="<%= require('../image/avatar.png') %>" alt="" width="100%;">
+              </div>
+              <p class="name pull-left">名字</p>
+              <p class="date pull-right">2017.01.01</p>
+            </div>
+            <p class="star">打分<span class="icon icon2"></span></p>
+            <p class="detail">好好好好好好好好好好好好好好好好好好</p>
+          </div>
+          <div class="item">
+            <div class="info clearfix">
+              <div class="avatar pull-left">
+                <img src="<%= require('../image/avatar.png') %>" alt="" width="100%;">
+              </div>
+              <p class="name pull-left">名字</p>
+              <p class="date pull-right">2017.01.01</p>
+            </div>
+            <p class="star">打分<span class="icon icon3"></span></p>
+            <p class="detail">好好好好好好好好好好好好好好好好好好</p>
+          </div>
+          <div class="item">
+            <div class="info clearfix">
+              <div class="avatar pull-left">
+                <img src="<%= require('../image/avatar.png') %>" alt="" width="100%;">
+              </div>
+              <p class="name pull-left">名字</p>
+              <p class="date pull-right">2017.01.01</p>
+            </div>
+            <p class="star">打分<span class="icon icon4"></span></p>
+            <p class="detail">好好好好好好好好好好好好好好好好好好</p>
+          </div>
+          <div class="item">
+            <div class="info clearfix">
+              <div class="avatar pull-left">
+                <img src="<%= require('../image/avatar.png') %>" alt="" width="100%;">
+              </div>
+              <p class="name pull-left">名字</p>
+              <p class="date pull-right">2017.01.01</p>
+            </div>
+            <p class="star">打分<span class="icon icon5"></span></p>
+            <p class="detail">好好好好好好好好好好好好好好好好好好</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="center-content all-center-content base">
+    <!-- 推荐阿姨 -->
+      <div class="recommend-aunts all-recommend-aunts">
+        <p class="title">推荐阿姨</p>
+        <div class="aunts-list">
+          <a href="#" class="item clearfix">
+            <!-- <img class="lazyload pull-left img" data-src="<%= require('../image/avatar.png') %>" width="75" height="100"> -->
+            <img src="<%= require('../image/avatar.png') %>" alt="" class="pull-left img">
+            <div class="content pull-left">
+              <div class="info">
+                <span class="name">李阿姨</span>
+                <span class="star star1"></span>
+                <span class="status">空挡</span>
+                <span class="money">4000/月</span>
+              </div>
+              <div class="detail clearfix">
+                <span>47岁</span>
+                <span>舟山人</span>
+                <span>高中</span>
+                <span>1年经验</span>
+              </div>
+              <div class="boxes clearfix">
+                <span class="small-box">1年经验</span>
+                <span class="small-box">舟山人</span>
+                <span class="small-box">高中</span>
+              </div>
+            </div>
+          </a>
+          <a href="#" class="item clearfix">
+            <img src="<%= require('../image/avatar.png') %>" alt="" class="pull-left img">
+            <div class="content pull-left">
+              <div class="info">
+                <span class="name">李阿姨</span>
+                <span class="star star2"></span>
+                <span class="status active">上岗中</span>
+                <span class="money">4000/月</span>
+              </div>
+              <div class="detail clearfix">
+                <span>47岁</span>
+                <span>舟山人</span>
+                <span>高中</span>
+                <span>1年经验</span>
+              </div>
+              <div class="boxes clearfix">
+                <span class="small-box">1年经验</span>
+                <span class="small-box">舟山人</span>
+                <span class="small-box">高中</span>
+              </div>
+            </div>
+          </a>
+        </div>
+        <div class="underline">
+         <!--  <span class="line"></span>
+         <span class="text text-center">我也是有底线</span> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <%= require('html-loader!./layout/userFooter.html') %> -->
+  <%= require('html-loader!./layout/footer1.html') %>
+</body>
+</html>
