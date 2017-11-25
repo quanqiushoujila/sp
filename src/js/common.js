@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:06:11
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-24 21:33:57
+* @Last Modified time: 2017-11-25 14:38:54
 */
 'use strict';
 // 通用方法
@@ -417,6 +417,10 @@ var _bind = {
   bindEvent: function () {
     $('.all-top-wrapper .focus').click(function(event) {
       $(this).toggleClass('success-green');
+    });
+
+    $('.user-footer1 .left a').click(function(event) {
+      $(this).toggleClass('success-green').siblings().removeClass('success-green');
     });
   }
 }

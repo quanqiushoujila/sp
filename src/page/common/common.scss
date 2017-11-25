@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-24 23:10:12
+* @Last Modified time: 2017-11-25 14:39:37
 * @Last Modified time: 2017-11-19 19:27:16
 */
 $green: #3dbd95;
@@ -509,6 +509,48 @@ a:hover, a:focus, a:active {
     }
     
   }
+  &.user-footer1 {
+    background-color: #fff;
+    line-height: 70px;
+    .left {
+      width: 160px;
+      a {
+        color: #333;
+        padding-top: 20px;
+        background: #fff url('../../image/13.png') center 0px no-repeat;
+      }
+      a + a{
+        border-left: 1px solid #ccc;
+      }
+      a:first-child {
+        background-position: center -125px;
+        &.success-green {
+          background-position: center -194px;
+          color: $green;
+        }
+      }
+      a:last-child {
+        background-position: center 16px;
+        &.success-green {
+          background-position: center -54px;
+          color: $green;
+        }
+      }
+    }
+    .right {
+      width: calc(100% - 160px);
+      a {
+        color: #fff;
+        font-size: 1.2em;
+      }
+      a:first-child {
+        background-color: #84e0c4;
+      }
+      a:last-child {
+        background-color: #11c751;
+      }
+    }
+  }
 }
 
 // 轮播图
@@ -970,15 +1012,113 @@ a:hover, a:focus, a:active {
 
 // 保姆详情页
 .detail-wrap {
+  height: calc(100vh - 70px);
+  overflow-y: auto;
   .base {
     margin-top: 10px;
     padding: 10px 0 0;
     font-size: 1.1em;
     background-color: #fff;
+    
   }
   .top {
+    background-color: #fff;
+    padding: 10px 15px;
+    .img {
+      width: 80px;
+      height: 106px;
+      margin-right: 10px;
+    }
+    .infos {
+      width: calc(100% - 100px);
+    }
+    .info-wrap {
+      position: relative;
+      .name {
+        font-size: 1.5em;
+        font-weight: 700;
+      }
+      .money {
+        font-size: 1.2em;
+        font-weight: 700;
+        margin-left: 10px;
+        color: #fe7553;
+      }
+      .star {
+        position: absolute;
+        display: inline-block;
+        width: 89px;
+        height: 25px;
+        top: 5px;
+        right: -5px;
+        background: #fff url(/distimages/icon-star.png) 0px 4px no-repeat;
+        &.star1 {
+          background-position: 9px 5px;
+        }
+        &.star2 {
+          background-position: 9px -14px;
+        }
+        &.star3 {
+          background-position: 9px -33px;
+        }
+        &.star4 {
+          background-position: 9px -52px;
+        }
+        &.star5 {
+          background-position: 9px -72px;
+        }
+      }
+    }
+    .base-detail-wrap {
+      .base-detail {
+        display: inline-block;
+        padding: 3px 0 3px 20px;
+        background: #fff url('../../image/icon6.png') 0px 0px no-repeat;
+        &.icon1 {
+          background-position: -4px -574px;
+        }
+        &.icon2 {
+          background-position: -4px -844px;
+        }
+        &.icon3 {
+          background-position: -3px -225px;
+        }
+        &.icon4 {
+          background-position: -3px -33px;
+        }
+      }
+    }
+    .work-wrap {
+      padding: 3px 0;
+      color: #999;
+      .work-time, .reserve {
+        i {
+          color: $green;
+        }
+      }
+      .status {
+        margin-left: 15px;
+        color: #fe7553;
+      }
+      i {
+        font-style: normal;
+        display: inline-block;
+        padding: 0 5px;
+      }
+    }
+    .people-list {
+      margin-top: 4px;
+      .people-item {
+        margin: 3px 3px 0 0;
+        border: 1px solid $green;
+        color: $green;
+        padding: 0 7px;
+        border-radius: 5px;
+      }
+    }
 
   }
+
   .content-wrap {
     padding: 10px 15px;
     font-size: 1em;
@@ -1000,6 +1140,7 @@ a:hover, a:focus, a:active {
     }
   }
   .server {
+    padding-bottom: 10px;
     background-color: #fff;
     .server-wrap {
       .item {
@@ -1132,7 +1273,11 @@ a:hover, a:focus, a:active {
       }
     }
   }
+  .recommend-aunts .aunts-list .item + .item {
+    margin-top: 0;
+  }
 }
+
 
 @media (max-width: 375px) {
 

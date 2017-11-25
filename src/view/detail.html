@@ -6,7 +6,32 @@
 </head>
 <body>
   <div class="detail-wrap">
-    <div class="top"></div>
+    <div class="top clearfix">
+      <img src="<%= require('../image/avatar.png') %>" alt="" class="img pull-left clearfix">
+      <div class="infos pull-left clearfix">
+        <div class="info-wrap">
+          <span class="name">李阿姨</span>
+          <span class="money">4000/月</span>
+          <span class="star star1"></span>
+        </div>
+        <div class="base-detail-wrap">
+          <span class="base-detail icon1">47岁</span>
+          <span class="base-detail icon2">舟山人</span>
+          <span class="base-detail icon3">高中</span>
+          <span class="base-detail icon4">10年经验</span>
+        </div>
+        <div class="work-wrap clearfix">
+          <span class="work-time pull-left">在岗<i>100</i>天</span>
+          <span class="status pull-left">上岗中</span>
+          <span class="reserve pull-right">预约<i>1</i>次</span>
+        </div>
+        <div class="people-list clearfix">
+          <span class="people-item pull-left">身份验证</span>
+          <span class="people-item pull-left">证件备案</span>
+          <span class="people-item pull-left">技能考核</span>
+        </div>
+      </div>
+    </div>
     <div class="base-info base">
       <p class="title">基本信息</p>
       <div class="clearfix">
@@ -97,6 +122,7 @@
       <div class="content-wrap">
         <p class="info">自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍自我介绍</p>
         <img src="<%= require('../image/img.jpg') %>" width="100%" alt="" class="img">
+        <img src="<%= require('../image/img.jpg') %>" width="100%" alt="" class="img">
       </div>
     </div>
     <div class="commit base">
@@ -167,7 +193,7 @@
         </div>
       </div>
     </div>
-    <div class="center-content all-center-content base">
+    <div class="center-content all-center-content">
     <!-- 推荐阿姨 -->
       <div class="recommend-aunts all-recommend-aunts">
         <p class="title">推荐阿姨</p>
@@ -225,7 +251,7 @@
       </div>
     </div>
   </div>
-  <!-- <%= require('html-loader!./layout/userFooter.html') %> -->
+  <%= require('html-loader!./layout/userFooter1.html') %>
   <%= require('html-loader!./layout/footer1.html') %>
 </body>
 </html>
