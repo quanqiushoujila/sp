@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <%= require('html-loader!./layout/html-common.html') %>
+  <title><%= htmlWebpackPlugin.options.title%></title>
+</head>
+<body>
+  <div class="my">
+    <div class="swiper-container swiper-my">
+      <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <a href="#">
+              <img width="100%" src="<%= require('../image/banner.png') %>" alt="banner">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#">
+              <img width="100%" src="<%= require('../image/banner.png') %>" alt="banner">
+            </a>
+          </div>
+          <div class="swiper-slide">
+            <a href="#">
+              <img width="100%" src="<%= require('../image/banner.png') %>" alt="banner">
+            </a>
+          </div>
+      </div>
+      <div class="swiper-pagination" id="pagination"></div>
+    </div>
+  </div>
+  <%= require('html-loader!./layout/userFooter.html') %>
+  <%= require('html-loader!./layout/footer.html') %>
+  <script>
+    var mySwiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (a, b) {
+          switch (a) {
+          case 0:
+              name = "洗";
+              break;
+          case 1:
+              name = "剪";
+              break;
+          case 2:
+              name = "烫";
+              break;
+          }
+        return '<span class="' + b + '"><i>' + name + "</i></span>"
+      }
+    }
+  })
+  </script>
+</body>
+</html>

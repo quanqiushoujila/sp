@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-25 14:39:37
+* @Last Modified time: 2017-11-27 17:29:57
 * @Last Modified time: 2017-11-19 19:27:16
 */
 $green: #3dbd95;
@@ -1278,6 +1278,44 @@ a:hover, a:focus, a:active {
   }
 }
 
+//个人中心
+.my {
+  height: calc(100vh - 71px);
+  overflow-y: auto;
+  .swiper-my {
+    position: relative;
+    padding-top: 50px;
+    .swiper-pagination {
+      position: absolute;
+      top: 0px;
+      height: 40px;
+      left: 0;
+      right: 0;
+      .swiper-pagination-bullet {
+        display: block;
+        float: left;
+        width: 33.333%;
+        border-radius: 0;
+        margin: 0;
+        height: 40px;
+        line-height: 40px;
+        color: #333;
+        background-color: #fff;
+        border-top: 1px solid #ccc;
+        border-bottom: 1px solid #ccc;
+        opacity: 1;
+        filter: alpha(opacity=100);
+        i {
+          font-style: normal;
+        }
+        &.swiper-pagination-bullet-active {
+          color: $green;
+          border-bottom: 1px solid $green;
+        }
+      }
+    }
+  }
+}
 
 @media (max-width: 375px) {
 

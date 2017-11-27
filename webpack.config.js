@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-24 21:37:49
+* @Last Modified time: 2017-11-27 16:41:41
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -117,9 +117,9 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('list', '保姆列表页')),
         new HtmlWebpackPlugin(getHtmlConfig('all', '所有保姆')),
         new HtmlWebpackPlugin(getHtmlConfig('detail', '详情页')),
-        // new HtmlWebpackPlugin(getHtmlConfig('user-center-update', '修改个人信息')),
-        // new HtmlWebpackPlugin(getHtmlConfig('user-pass-update', '修改密码')),
-        // new HtmlWebpackPlugin(getHtmlConfig('result', '操作结果')),
+        new HtmlWebpackPlugin(getHtmlConfig('myassess', '我的评价')),
+        new HtmlWebpackPlugin(getHtmlConfig('myserver', '我的服务')),
+        new HtmlWebpackPlugin(getHtmlConfig('mycollection', '我的收藏')),
         
         new webpack.NoErrorsPlugin()
     ]
