@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-28 15:51:49
+* @Last Modified time: 2017-11-28 16:25:08
 * @Last Modified time: 2017-11-19 19:27:16
 */
 $green: #3dbd95;
@@ -48,6 +48,17 @@ a:hover, a:focus, a:active {
   &:hover, &:focus, &:active {
     color: #fff;
     background-color: $green;
+  }
+}
+.green-border-btn {
+  color: $green;
+  padding: 6px 25px;
+  border-color: $green;
+  font-size: 1.2em;
+  &:hover, &:focus, &:active {
+    color: $green;
+    border-color: $green;
+    background-color: #fff;
   }
 }
 .btn {
@@ -1456,7 +1467,12 @@ a:hover, a:focus, a:active {
 .my-server {
 
 }
-
+// 我的评价
+.my-comment {
+  .server-list .item .info .name {
+    margin-top: 25px;
+  }
+}
 
 // 关于我们
 .aboutus-wrap {
@@ -1493,6 +1509,41 @@ a:hover, a:focus, a:active {
 .my-top {
   margin-bottom: 0px; 
 }
+
+// 评价详情
+
+// 我的钱包
+.my-wallet {
+  .content {
+    border-top: 1px solid #ddd;
+    background-color: #fff;
+    padding: 80px 0;
+    .name {
+      font-size: 1.4em;
+    }
+    .number {
+      font-size: 2em;
+      span {
+        margin-left: 10px;
+        font-weight: 700;
+      }
+    }
+  }
+  .btn-list {
+    margin-top: 30px;
+    padding: 10px 15px;
+    .btn {
+      padding: 10px;
+      outline: none;
+      font-size: 1.3em;
+    }
+    .btn + .btn {
+      margin-top: 20px;
+    }
+  }
+}
+
+
 
 @media (max-width: 375px) {
 
