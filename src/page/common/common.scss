@@ -2,11 +2,12 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-27 17:29:57
+* @Last Modified time: 2017-11-28 15:51:49
 * @Last Modified time: 2017-11-19 19:27:16
 */
 $green: #3dbd95;
 $grey: #f0f0f0;
+$red: #ff7452;
 
 // 初始化样式
 li, ul {
@@ -49,6 +50,9 @@ a:hover, a:focus, a:active {
     background-color: $green;
   }
 }
+.btn {
+  outline: none;
+}
 
 .text-green {
   color: $green;
@@ -58,6 +62,10 @@ a:hover, a:focus, a:active {
   text-overflow:ellipsis;
   white-space: nowrap;
 }
+.db {
+  display: block;
+}
+
 
 .center-content {
   &.all-center-content {
@@ -1278,17 +1286,34 @@ a:hover, a:focus, a:active {
   }
 }
 
-//个人中心
+// 用户协议
+.user-protocol {
+  .strong {
+    color: $green;
+  }
+}
+
+//个人中心通用样式
 .my {
-  height: calc(100vh - 71px);
-  overflow-y: auto;
+  height: calc(100vh - 126px);
+  &.my-comment {
+    .swiper-my .swiper-pagination .swiper-pagination-bullet {
+      width: 50%;
+    }
+  }
   .swiper-my {
     position: relative;
     padding-top: 50px;
+    .swiper-wrapper {
+      height: calc(100vh - 176px);
+      .swiper-slide {
+        overflow-y: auto;
+      }
+    }
     .swiper-pagination {
       position: absolute;
       top: 0px;
-      height: 40px;
+      height: 50px;
       left: 0;
       right: 0;
       .swiper-pagination-bullet {
@@ -1297,14 +1322,15 @@ a:hover, a:focus, a:active {
         width: 33.333%;
         border-radius: 0;
         margin: 0;
-        height: 40px;
-        line-height: 40px;
+        height: 50px;
+        line-height: 50px;
         color: #333;
         background-color: #fff;
         border-top: 1px solid #ccc;
         border-bottom: 1px solid #ccc;
         opacity: 1;
         filter: alpha(opacity=100);
+        font-size: 1.2em;
         i {
           font-style: normal;
         }
@@ -1315,6 +1341,157 @@ a:hover, a:focus, a:active {
       }
     }
   }
+  .server-list {
+    margin-top: 10px;
+    .item {
+      padding: 10px 15px;
+      background-color: #fff;
+      margin-bottom: 10px;
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;
+      .img {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%;
+        overflow: hidden;
+      }
+      .info {
+        width: calc(100% - 80px);
+        margin-left: 10px;
+        p {
+          margin: 0 0 5px;
+        }
+        .name {
+          font-size: 1.2em;
+          font-weight: 700;
+        }
+        .star {
+          margin: 0 0 8px;
+          width: 89px;
+          height: 16px;
+          background: #fff url('../../image/icon-star.png') 0px 4px no-repeat;
+          &.star1 {
+            background-position: 0 4px;
+          }
+          &.star2 {
+            background-position: 0 -16px;
+          }
+          &.star3 {
+            background-position: 0 -36px;
+          }
+          &.star4 {
+            background-position: 0 -54px;
+          }
+          &.star5 {
+            background-position: 0 -74px;
+          }
+        }
+        .money {
+          font-size: 1em;
+          color: $red;
+          font-weight: 700;
+        }
+        .phone {
+          background: #fff url('../../image/14.png') 0px -44px no-repeat;
+          font-size: 1em;
+          padding-left: 20px;
+        }
+        .address {
+          font-size: 1em;
+          padding-left: 20px;
+          background: #fff url('../../image/14.png') 0px 2px no-repeat;
+        }
+      }
+    }
+  }
+  .cancle {
+    height: 50px;
+    .btn {
+      margin-top: 15px;
+      color: $green;
+      border-color: $green;
+      outline: none;
+      border-radius: 30px;
+      padding: 6px 20px;
+    }
+  }
+}
+
+// 余额明细
+.my-recharge {
+  .list {
+    position: relative;
+    background-color: #fff;
+    height: 80px;
+    padding: 10px 15px;
+    & + .list {
+      border-top: 1px solid #ccc;
+    }
+    .text {
+      font-size: 1.4em;
+    }
+    .date {
+      font-size: .875em;
+      color: #999;
+    }
+    .money {
+      position: absolute;
+      top: 27px;
+      font-size: 1.2em;
+      right: 15px;
+    }
+    .money-in {
+      color: $green;
+    }
+  }
+}
+
+// 我的收藏
+.my-collection {
+  .recommend-aunts .aunts-list .item:focus {
+    border-color: #ddd;
+  }
+}
+// 我的服务
+.my-server {
+
+}
+
+
+// 关于我们
+.aboutus-wrap {
+  .img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin: 40px auto 20px;
+    overflow: hidden;
+  }
+  .content-wrap {
+    padding: 0 15px;
+    .content {
+      font-size: 1.2em;
+      text-align: justify;
+      text-justify:inter-ideograph;
+    }
+    .strong {
+      color: $green;
+      font-size: 1.2em;
+      margin-top: 30px;
+      display: block;
+    }
+    .text {
+      font-size: 1em;
+    }
+  }
+  .version {
+    margin-top: 40px;
+    font-size: .875em;
+  }
+}
+
+.my-top {
+  margin-bottom: 0px; 
 }
 
 @media (max-width: 375px) {

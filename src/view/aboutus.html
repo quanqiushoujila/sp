@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <%= require('html-loader!./layout/html-common1.html') %>
+  <title><%= htmlWebpackPlugin.options.title%></title>
+</head>
+<body>
+  <div class="top top-wrap">
+    <a class="back" href="javascript:void(0);" onclick="window.history.back()"></a>
+    <h2 class="text-center">关于我们</h2>
+  </div>
+  <div class="aboutus-wrap">
+    <div class="img text-center" style="background-color: #3dbd95;">
+      <img src="" alt="logo" width="100%">
+    </div>
+    <div class="content-wrap">
+      <p class="content">
+        ******以提供 保姆服务为核心业务的家政服务平台，服务内容涵盖家政、丽人、搬家、速运、洗车、汽车陪练、推拿按摩等众多领域。******遵循“客户第一，服务至上”的核心价值观，以“提升客户生活品质，让生活更简单”为企业使命，致力于为用户提供高品质、更便捷、最安心的上门生活服务。我们提供的不仅仅是服务，更是一种简单、美好、轻松的全新生活方式。
+      </p>
+      <b class="strong">专业服务</b>
+      <p class="text">
+        服务规范引领行业标准，顶级培训，服务团队先毕业后上岗。
+      </p>
+      <b class="strong">准时上门</b>
+      <p class="text">
+        全城社区高密度覆盖，我们按照预约准时到达。
+      </p>
+      <b class="strong">统一定价</b>
+      <p class="text">
+        价格统一透明，确保您花的每一分钱都物超所值。
+      </p>
+      <b class="strong">全程保障</b>
+      <p class="text">
+        每笔订单均有专属客服跟踪，有问题先赔付，全程在线更安心。
+      </p>
+    </div>
+    <p class="text-center version">当前版本v1.1 <br>www.xxx.com</p>
+  </div>
+  <script src="https://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+</body>
+</html>

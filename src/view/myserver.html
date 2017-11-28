@@ -5,29 +5,150 @@
   <title><%= htmlWebpackPlugin.options.title%></title>
 </head>
 <body>
-  <div class="swiper-container">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <a href="#">
-            <img width="100%" src="<%= require('../image/banner.png') %>" alt="banner">
-          </a>
+  <div class="top top-wrap my-top">
+    <a class="back" href="javascript:void(0);" onclick="window.history.back()"></a>
+    <h2 class="text-center">我的服务</h2>
+  </div>
+  <div class="my my-server">
+    <div class="swiper-container swiper-my">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <div class="server-list">
+                <div class="clearfix item">
+                  <div class="detail clearfix">
+                    <div class="pull-left img">
+                      <img src="<%= require('../image/avatar.png') %>" alt="avatar" width="100%">
+                    </div>
+                    <div class="info pull-left">
+                      <p class="name text-overflow">管道修理</p>
+                      <p class="money">￥4000/月</p>
+                      <p class="phone">13312341234</p>
+                    </div>
+                  </div>
+                  <div class="cancle clearfix text-right">
+                    <button class="btn btn-default">确认服务</button>
+                    <button class="btn btn-default">评价</button>
+                  </div>
+                </div>
+                <div class="clearfix item">
+                  <div class="detail clearfix">
+                    <div class="pull-left img">
+                      <img src="<%= require('../image/avatar.png') %>" alt="avatar" width="100%">
+                    </div>
+                    <div class="info pull-left">
+                      <p class="name text-overflow">管道修理</p>
+                      <p class="money">￥4000/月</p>
+                      <p class="phone">13312341234</p>
+                    </div>
+                  </div>
+                  <div class="cancle clearfix text-right">
+                    <button class="btn btn-default">确认服务</button>
+                    <button class="btn btn-default">评价</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="server-list">
+                <div class="clearfix item">
+                  <div class="detail clearfix">
+                    <div class="pull-left img">
+                      <img src="<%= require('../image/avatar.png') %>" alt="avatar" width="100%">
+                    </div>
+                    <div class="info pull-left">
+                      <p class="name text-overflow">管道修理</p>
+                      <p class="money">￥4000/月</p>
+                      <p class="phone">13312341234</p>
+                    </div>
+                  </div>
+                  <div class="cancle clearfix text-right">
+                    <button class="btn btn-default">确认服务</button>
+                    <button class="btn btn-default">评价</button>
+                  </div>
+                </div>
+                <div class="clearfix item">
+                  <div class="detail clearfix">
+                    <div class="pull-left img">
+                      <img src="<%= require('../image/avatar.png') %>" alt="avatar" width="100%">
+                    </div>
+                    <div class="info pull-left">
+                      <p class="name text-overflow">管道修理</p>
+                      <p class="money">￥4000/月</p>
+                      <p class="phone">13312341234</p>
+                    </div>
+                  </div>
+                  <div class="cancle clearfix text-right">
+                    <button class="btn btn-default">确认服务</button>
+                    <button class="btn btn-default">评价</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="swiper-slide">
+              <div class="server-list">
+                <div class="clearfix item">
+                  <div class="detail clearfix">
+                    <div class="pull-left img">
+                      <img src="<%= require('../image/avatar.png') %>" alt="avatar" width="100%">
+                    </div>
+                    <div class="info pull-left">
+                      <p class="name text-overflow">管道修理</p>
+                      <p class="money">￥4000/月</p>
+                      <p class="phone">13312341234</p>
+                    </div>
+                  </div>
+                  <div class="cancle clearfix text-right">
+                    <button class="btn btn-default">确认服务</button>
+                    <button class="btn btn-default">评价</button>
+                  </div>
+                </div>
+                <div class="clearfix item">
+                  <div class="detail clearfix">
+                    <div class="pull-left img">
+                      <img src="<%= require('../image/avatar.png') %>" alt="avatar" width="100%">
+                    </div>
+                    <div class="info pull-left">
+                      <p class="name text-overflow">管道修理</p>
+                      <p class="money">￥4000/月</p>
+                      <p class="phone">13312341234</p>
+                    </div>
+                  </div>
+                  <div class="cancle clearfix text-right">
+                    <button class="btn btn-default">确认服务</button>
+                    <button class="btn btn-default">评价</button>
+                  </div>
+                </div>
+              </div>
+            </div>
         </div>
-        <div class="swiper-slide">
-          <a href="#">
-            <img width="100%" src="<%= require('../image/banner.png') %>" alt="banner">
-          </a>
-        </div>
-        <div class="swiper-slide">
-          <a href="#">
-            <img width="100%" src="<%= require('../image/banner.png') %>" alt="banner">
-          </a>
-        </div>
+      </div>
+      <div class="swiper-pagination" id="pagination"></div>
     </div>
   </div>
   <%= require('html-loader!./layout/userFooter.html') %>
   <%= require('html-loader!./layout/footer.html') %>
   <script>
-    var mySwiper = new Swiper('.swiper-container')
+    var mySwiper = new Swiper('.swiper-container', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+        renderBullet: function (a, b) {
+          switch (a) {
+          case 0:
+              name = "全部";
+              break;
+          case 1:
+              name = "代服务";
+              break;
+          case 2:
+              name = "代评价";
+              break;
+          }
+        return '<span class="' + b + '"><i>' + name + "</i></span>"
+      }
+    }
+  })
   </script>
 </body>
 </html>
