@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <%= require('html-loader!./layout/html-common.html') %>
+  <title><%= htmlWebpackPlugin.options.title%></title>
+</head>
+<body>
+  <div class="top top-wrap my-top">
+    <a class="back" href="javascript:void(0);" onclick="window.history.back()"></a>
+    <h2 class="text-center">编辑地址</h2>
+  </div>
+  <div class="my my-edit-address">
+   
+  </div>
+  <%= require('html-loader!./layout/userFooter.html') %>
+  <%= require('html-loader!./layout/footer.html') %>
+  <script>
+  </script>
+</body>
+</html>

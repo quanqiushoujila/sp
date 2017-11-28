@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-28 16:04:20
+* @Last Modified time: 2017-11-28 16:31:47
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -123,6 +123,9 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('aboutus', '关于我们')),
         new HtmlWebpackPlugin(getHtmlConfig('recharge', '余额明细')),
         new HtmlWebpackPlugin(getHtmlConfig('mywallet', '我的钱包')),
+        new HtmlWebpackPlugin(getHtmlConfig('myeditaddress', '编辑地址')),
+        new HtmlWebpackPlugin(getHtmlConfig('myaddaddress', '添加地址')),
+        new HtmlWebpackPlugin(getHtmlConfig('myaddress', '服务地址')),
         
         new webpack.NoErrorsPlugin()
     ]

@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:06:11
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-25 14:38:54
+* @Last Modified time: 2017-11-28 17:06:12
 */
 'use strict';
 // 通用方法
@@ -421,6 +421,11 @@ var _bind = {
 
     $('.user-footer1 .left a').click(function(event) {
       $(this).toggleClass('success-green').siblings().removeClass('success-green');
+    });
+
+    // 选择默认地址
+    $('.my-address .address-list .item').click(function(event) {
+      //var checked = $(this).find()
     });
   }
 }

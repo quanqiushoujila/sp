@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <%= require('html-loader!./layout/html-common.html') %>
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <title><%= htmlWebpackPlugin.options.title%></title>
+</head>
+<body>
+  <div class="top top-wrap my-top">
+    <a class="back" href="javascript:void(0);" onclick="window.history.back()"></a>
+    <h2 class="text-center">服务地址</h2>
+  </div>
+  <div class="my my-address">
+    <div class="address-list">
+      <div class="item">
+        <div class="detail">
+          <p class="text">
+            <span>李阿姨</span>
+            <span class="phone">133333333333</span>
+          </p>
+          <p class="address">浙江浙江浙江浙江浙江浙江浙江浙江浙江浙江浙江浙江浙江</p>
+        </div>
+        <div class="choose clearfix">
+          <div class="pull-left">
+            <label class="address-radio">
+              <i class="fa fa-check-circle fa-circle-o "></i>
+              <input type="radio" name="address">
+              默认地址
+            </label>
+          </div>
+          <div class="pull-right">
+            <a href="#" class="edit"><i class="fa fa-edit"></i>编辑</a>
+            <a href="javascript:void(0);" class="del"><i class="fa fa-trash-o"></i>删除</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <%= require('html-loader!./layout/userFooter.html') %>
+  <%= require('html-loader!./layout/footer.html') %>
+  <script>
+  </script>
+</body>
+</html>
