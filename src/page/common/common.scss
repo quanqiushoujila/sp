@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-29 17:11:29
+* @Last Modified time: 2017-11-29 17:22:22
 * @Last Modified time: 2017-11-19 19:27:16
 */
 $green: #3dbd95;
@@ -1601,7 +1601,25 @@ a:hover, a:focus, a:active {
     font-size: 1.2em;
   }
 }
-
+// 编辑地址
+.my-edit-address {
+  .my-edit-address-form {
+    padding: 10px 15px;
+    background-color: #fff;
+    font-size: 1.2em;
+    input {
+      outline: none;
+      border: -none;
+      margin-left: 10px;
+    }
+    textarea {
+      margin-left: 10px;
+    }
+    .input-wrap {
+      padding: 10px 0;
+    }
+  }
+}
 
 @media (max-width: 375px) {
 

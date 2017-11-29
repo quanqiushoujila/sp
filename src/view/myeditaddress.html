@@ -10,7 +10,24 @@
     <h2 class="text-center">编辑地址</h2>
   </div>
   <div class="my my-edit-address">
-   
+    <form action="" id="my-edit-address-form" class="my-edit-address-form">
+      <div class="input-wrap">
+        <label for="">姓名</label>
+        <input type="text" id="name">
+      </div>
+      <div class="input-wrap">
+        <label for="">电话</label>
+        <input type="text" id="phone">
+      </div>
+      <div class="input-wrap">
+        <label for="">地区</label>
+        <input type="text" class="area">
+      </div>
+      <div class="input-wrap">
+        <label for="">地址</label>
+        <textarea name="" id="address" cols="30" rows="2"></textarea>
+      </div>
+    </form>
   </div>
   <%= require('html-loader!./layout/userFooter.html') %>
   <%= require('html-loader!./layout/footer.html') %>
