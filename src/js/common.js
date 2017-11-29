@@ -2,7 +2,7 @@
  * @Author: kai
  * @Date:   2017-11-14 20:06:11
  * @Last Modified by:   kai
- * @Last Modified time: 2017-11-28 17:27:57
+ * @Last Modified time: 2017-11-29 17:06:31
  */
 'use strict';
 // 通用方法
@@ -55,13 +55,15 @@ var _bm = {
 
     })
   },
+  
+  //返回上一页
   goBack: function() {
     if ((navigator.userAgent.indexOf('MSIE') >= 0) && (navigator.userAgent.indexOf('Opera') < 0)) { // IE  
       if (history.length > 0) {
         window.history.go(-1);
       } else {
         window.opener = null;
-        window.close();
+        window.location.href = './index.html';
       }
     } else { //非IE浏览器  
       if (navigator.userAgent.indexOf('Firefox') >= 0 ||
@@ -74,7 +76,7 @@ var _bm = {
           window.history.go(-1);
         } else {
           window.opener = null;
-          window.close();
+          window.location.href = './index.html';
         }
       } else { //未知的浏览器  
         window.history.go(-1);
@@ -454,10 +456,54 @@ var _bind = {
   }
 }
 
+// 个人中心
+var _my = {
+  option: {
+    unchecked: 'fa-circle-o',
+    checked: 'fa-check-circle'
+  },
+
+  init: function () {
+    this.bindEvent();
+    this.onLoad();
+  },
+
+  bindEvent: function () {
+    var _this = this;
+    // 选择默认地址
+    $('.my-address .address-list .item .detail').click(function () {
+      $(this).next().find('input').prop('checked', true)
+        .next().addClass('address-radio-active')
+        .find('i').removeClass(_this.option.unchecked).addClass(_this.option.checked);
+      $(this).parent().siblings('.item').find('input').prop('checked', false).next()
+        .removeClass('address-radio-active').find('i')
+        .removeClass(_this.option.checked).addClass(_this.option.unchecked);
+    });
+    //服务地址编辑
+    $('.my-address .address-list .edit, .my-address .address-list .del').click(function (event) {
+      event.stopPropagation();
+    })
+    //服务地址删除
+  },
+
+  onLoad: function () {
+    var item = $('.my-address .address-list .item');
+    for (var i = 0, len = item.size(); i < len; i++) {
+      var radio = $(item[i]).find('input');
+      if (radio.prop('checked')) {
+        radio.next().addClass('address-radio-active').find('i')
+          .removeClass(this.option.unchecked).addClass(this.option.checked);
+        break;
+      }
+    }
+  }
+}
+
 $(function() {
   _log.init();
   _search.init();
   _sort.init();
   _bind.init();
-  //$("img.lazyload").lazyload();
+  // myaddress
+  _my.init();
 });
