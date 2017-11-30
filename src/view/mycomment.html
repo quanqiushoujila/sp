@@ -2,6 +2,7 @@
 <html lang="zh-CN">
 <head>
   <%= require('html-loader!./layout/html-common.html') %>
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <title><%= htmlWebpackPlugin.options.title%></title>
 </head>
 <body>
@@ -10,12 +11,90 @@
     <h2 class="text-center">我的评价</h2>
   </div>
   <div class="my my-comment">
-    <div class="swiper-container swiper-my">
-      <div class="swiper-container">
+    <div class="swiper-my">
+      <div class="swiper-container swiper-container-my">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
+              <!-- 已评价 -->
+              <div class="comment-detail">
+                <div class="content-container">
+                  <div class="item">
+                    <div class="info clearfix">
+                      <div class="avatar pull-left">
+                        <img src="<%= require('../image/avatar.png') %>" alt="" width="100%;">
+                      </div>
+                      <p class="name pull-left">名字</p>
+                      <p class="date pull-right">2017.01.01</p>
+                    </div>
+                    <p class="star">打分<span class="icon icon1"></span></p>
+                    <p class="detail">好好好好好好好好好好好好好好好好好好</p>
+                    <div class="swiper-container swiper-container-img-list clearfix">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="foot text-right">
+                      <a href="#" class="del-comment-btn btn btn-default"><i class="fa fa-trash-o"></i>删除评论</a>
+                    </div>
+                  </div>
+                  <div class="item">
+                    <div class="info clearfix">
+                      <div class="avatar pull-left">
+                        <img src="<%= require('../image/avatar.png') %>" alt="" width="100%;">
+                      </div>
+                      <p class="name pull-left">名字</p>
+                      <p class="date pull-right">2017.01.01</p>
+                    </div>
+                    <p class="star">打分<span class="icon icon1"></span></p>
+                    <p class="detail">好好好好好好好好好好好好好好好好好好</p>
+                    <div class="swiper-container swiper-container-img-list clearfix">
+                      <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                          <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+                        </div>
+                        <div class="swiper-slide">
+                          <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+                        </div>
+                      </div>
+                    </div>
+                    <div class="foot text-right">
+                      <a href="#" class="del-comment-btn btn btn-default"><i class="fa fa-trash-o"></i>删除评论</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div class="swiper-slide">
+              <!-- 未评价 -->
               <div class="server-list">
                 <div class="clearfix item">
                   <div class="detail clearfix">
@@ -48,29 +127,32 @@
             
         </div>
       </div>
-      <div class="swiper-pagination" id="pagination"></div>
+      <div class="swiper-pagination swiper-pagination-my" id="pagination"></div>
     </div>
   </div>
   <%= require('html-loader!./layout/userFooter.html') %>
   <%= require('html-loader!./layout/footer.html') %>
   <script>
-    var mySwiper = new Swiper('.swiper-container', {
+    var mySwiper = new Swiper('.swiper-container-my', {
       pagination: {
-        el: '.swiper-pagination',
+        el: '.swiper-pagination-my',
         clickable: true,
         renderBullet: function (a, b) {
           switch (a) {
           case 0:
-              name = "已评价";
-              break;
+            name = "已评价";
+            break;
           case 1:
-              name = "待评价";
-              break;
+            name = "待评价";
+            break;
           }
-        return '<span class="' + b + '"><i>' + name + "</i></span>"
+          return '<span class="' + b + '"><i>' + name + "</i></span>"
+        }
       }
-    }
-  })
+    });
+    var mySwiper1 = new Swiper('.swiper-container-img-list', {
+      slidesPerView : 3
+    })
   </script>
 </body>
 </html>

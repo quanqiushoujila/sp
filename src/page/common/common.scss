@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-29 19:32:49
+* @Last Modified time: 2017-11-30 10:07:56
 * @Last Modified time: 2017-11-19 19:27:16
 */
 $green: #3dbd95;
@@ -1222,79 +1222,126 @@ a:hover, a:focus, a:active {
       margin-bottom: 0;
     }
   }
-  .commit {
-    position: relative;
-    padding-bottom: 0;
-    .btn-all {
-      position: absolute;
-      top: 15px;
-      right: 15px;
-      color: #999;
-      font-size: .875em;
-      &:focus {
-        color: $green;
-      }
+  .recommend-aunts .aunts-list .item + .item {
+    margin-top: 0;
+  }
+}
+// 保姆详细评价模块
+.comment-detail {
+  position: relative;
+  padding-bottom: 0;
+  .btn-all {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #999;
+    font-size: .875em;
+    &:focus {
+      color: $green;
     }
-    .tag-list {
+  }
+  .tag-list {
+    padding: 10px 15px;
+    .tag {
+      background-color: #eafbe6;
+      padding: 2px 10px;
+      display: inline-block;
+      border-radius: 5px;
+    }
+  }
+  .content-container {
+    .item {
+      background-color: #fff;
       padding: 10px 15px;
-      .tag {
-        background-color: #eafbe6;
-        padding: 2px 10px;
-        display: inline-block;
-        border-radius: 5px;
+      border-bottom: 1px solid #ccc;
+      .info {
+        line-height: 35px;
       }
-    }
-    .content-container {
-      .item {
-        padding: 10px 15px;
-        border-bottom: 1px solid #ccc;
-        .info {
-          line-height: 35px;
+      .date {
+        color: #999;
+      }
+      .star {
+        color: #999;
+        .icon {
+          vertical-align: middle;
+          display: inline-block;
+          width: 89px;
+          height: 25px;
+          background: #fff url(/distimages/icon-star.png) 0px 4px no-repeat;
         }
-        .date {
-          color: #999;
+        .icon1 {
+          background-position: 9px 5px;
         }
-        .star {
-          color: #999;
-          .icon {
-            vertical-align: middle;
-            display: inline-block;
-            width: 89px;
-            height: 25px;
-            background: #fff url(/distimages/icon-star.png) 0px 4px no-repeat;
-          }
-          .icon1 {
-            background-position: 9px 5px;
-          }
-          .icon2 {
-            background-position: 9px -14px;
-          }
-          .icon3 {
-            background-position: 9px -33px;
-          }
-          .icon4 {
-            background-position: 9px -52px;
-          }
-          .icon5 {
-            background-position: 9px -72px;
-          }
+        .icon2 {
+          background-position: 9px -14px;
         }
-        .avatar {
-          height: 35px;
-          width: 35px;
-          border-radius: 50%;
-          overflow: hidden;
-          text-align: center;
-          margin-right: 10px;
+        .icon3 {
+          background-position: 9px -33px;
         }
-        .detail {
-          margin: 0;
+        .icon4 {
+          background-position: 9px -52px;
         }
+        .icon5 {
+          background-position: 9px -72px;
+        }
+      }
+      .avatar {
+        height: 35px;
+        width: 35px;
+        border-radius: 50%;
+        overflow: hidden;
+        text-align: center;
+        margin-right: 10px;
+      }
+      .detail {
+        margin: 0;
       }
     }
   }
-  .recommend-aunts .aunts-list .item + .item {
-    margin-top: 0;
+}
+
+// 已评价模块
+.my-comment {
+  .comment-detail {
+    .content-container {
+      .item { 
+        margin-top: 10px;
+        .swiper-container-img-list {
+          height: 100px;
+          margin-top: 10px;
+          .swiper-wrapper {
+            height: auto;
+          }
+          .swiper-slide {
+            height: auto;
+          }
+        }
+        .foot {
+          padding: 20px 0 10px 0;
+          font-size: 1em;
+          .del-comment-btn {
+            color: #333;
+            display: inline-block;
+            border-radius: 30px;
+            i {
+              margin-right: 5px;
+            }
+            &:focus {
+              color: $green;
+              background-color: #fff;
+              box-shadow: none;
+              outline: none;
+              border-color: $green;
+            }
+            &:active, &:hover {
+              background-color: #fff;
+              outline: none;
+              box-shadow: none;
+            }
+          }
+        }
+      }
+    }
   }
 }
 
