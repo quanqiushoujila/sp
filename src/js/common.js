@@ -2,7 +2,7 @@
  * @Author: kai
  * @Date:   2017-11-14 20:06:11
  * @Last Modified by:   kai
- * @Last Modified time: 2017-11-30 09:26:09
+ * @Last Modified time: 2017-11-30 10:28:42
  */
 'use strict';
 // 通用方法
@@ -82,6 +82,15 @@ var _bm = {
         window.history.go(-1);
       }
     }
+  },
+
+  phoneWatch: function () {
+    window.addEventListener('popstate', function (event) {
+      alert('event:'+ event)
+    });
+  },
+  onLoad: function () {
+    this.phoneWatch();
   }
 };
 
@@ -506,4 +515,5 @@ $(function() {
   _bind.init();
   // myaddress
   _my.init();
+  _bm.onLoad();
 });

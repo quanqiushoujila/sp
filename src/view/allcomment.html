@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <%= require('html-loader!./layout/html-common.html') %>
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <title><%= htmlWebpackPlugin.options.title%></title>
+</head>
+<body>
+  <div class="detail-wrap all-comment-wrap">
+    
+    <div class="comment-detail">
+      <div class="tag-list">
+          <span class="tag">勤快（11）</span>
+          <span class="tag">勤快（11）</span>
+          <span class="tag">勤快（11）</span>
+        </div>
+      <div class="content-container">
+        <div class="item">
+          <div class="info clearfix">
+            <div class="avatar pull-left">
+              <img src="<%= require('../image/avatar.png') %>" alt="" width="100%;">
+            </div>
+            <p class="name pull-left">名字</p>
+            <p class="date pull-right">2017.01.01</p>
+          </div>
+          <p class="star">打分<span class="icon icon1"></span></p>
+          <p class="detail">好好好好好好好好好好好好好好好好好好</p>
+          <div class="swiper-container swiper-container-img-list clearfix">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="foot text-right">
+            <a href="#" class="del-comment-btn btn btn-default"><i class="fa"></i>评论</a>
+            <a href="#" class="del-comment-btn btn btn-default"><i class="fa"></i>赞</a>
+          </div>
+        </div>
+        <div class="item">
+          <div class="info clearfix">
+            <div class="avatar pull-left">
+              <img src="<%= require('../image/avatar.png') %>" alt="" width="100%;">
+            </div>
+            <p class="name pull-left">名字</p>
+            <p class="date pull-right">2017.01.01</p>
+          </div>
+          <p class="star">打分<span class="icon icon1"></span></p>
+          <p class="detail">好好好好好好好好好好好好好好好好好好</p>
+          <div class="swiper-container swiper-container-img-list clearfix">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+              </div>
+              <div class="swiper-slide">
+                <img src="<%= require('../image/avatar.png') %>" width="100%" height="100%" alt="">
+              </div>
+            </div>
+          </div>
+          <div class="foot text-right">
+            <a href="#" class="del-comment-btn btn btn-default"><i class="fa"></i>评论</a>
+            <a href="#" class="del-comment-btn btn btn-default"><i class="fa"></i>赞</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <%= require('html-loader!./layout/userFooter1.html') %>
+  <%= require('html-loader!./layout/footer.html') %>
+  <script>
+    var mySwiper1 = new Swiper('.swiper-container-img-list', {
+      slidesPerView : 3
+    })
+  </script>
+</body>
+</html>

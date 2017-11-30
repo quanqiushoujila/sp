@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-29 10:42:24
+* @Last Modified time: 2017-11-30 10:13:23
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -126,6 +126,7 @@ var config = {
         new HtmlWebpackPlugin(getHtmlConfig('myeditaddress', '编辑地址')),
         new HtmlWebpackPlugin(getHtmlConfig('myaddaddress', '添加地址')),
         new HtmlWebpackPlugin(getHtmlConfig('myaddress', '服务地址')),
+        new HtmlWebpackPlugin(getHtmlConfig('allcomment', '所有评价')),
         
         new webpack.NoErrorsPlugin()
     ]
