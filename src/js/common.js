@@ -2,7 +2,7 @@
  * @Author: kai
  * @Date:   2017-11-14 20:06:11
  * @Last Modified by:   kai
- * @Last Modified time: 2017-12-02 15:21:01
+ * @Last Modified time: 2017-12-02 15:24:15
  */
 'use strict';
 // 通用方法
@@ -587,8 +587,27 @@ var _address = {
     $('.area-hook').click(function () {
       _this.areaIn();
     });
+    // 编辑地址
+    $('.my-edit-address .edit-save').click(function () {
+      var formData = {
+        name: $('#name').val(),
+        phone: $('#phone').val(),
+        area: $('#area-select').val(),
+        address: $('#address').val()
+      }
 
-    $('.my-edit-address .btn-save').click(function () {
+      var validateResult = _this.areaValidate(formData);
+      if (validateResult.status) {
+        _bm.successMsg(validateResult.msg);
+      } else {
+        _bm.errorMsg(validateResult.msg);
+        return false;
+      }
+      return false;
+    });
+
+    // 增加地址
+    $('.my-edit-address .add-save').click(function () {
       var formData = {
         name: $('#name').val(),
         phone: $('#phone').val(),
