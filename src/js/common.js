@@ -2,7 +2,7 @@
  * @Author: kai
  * @Date:   2017-11-14 20:06:11
  * @Last Modified by:   kai
- * @Last Modified time: 2017-12-02 13:54:49
+ * @Last Modified time: 2017-12-02 15:21:01
  */
 'use strict';
 // 通用方法
@@ -569,9 +569,13 @@ var _address = {
     var _this = this;
     // 地区选择
     $('.choose-container .choose-wrap .address-wrap').click(function () {
-      var name = $(this).find('.name').text();
+      // var name = $(this).find('.name').text();
+      var val = $(this).find('.name').attr('data-val');
       $(this).find('.icon-check').show().parent().siblings().find('.icon-check').hide();
       _this.areaOut();
+
+      var name = $('#area-select option[value = ' + val+ ']').prop('selected', true).text();
+      $('#area').val(name);
     });
 
     // 地区返回按钮
@@ -583,13 +587,23 @@ var _address = {
     $('.area-hook').click(function () {
       _this.areaIn();
     });
-    $('#area').addEventListener('click', function () {
-      alert(222)
-    });
-    $('#area').click(function (event) {
-      alert(11)
-      event.stopPropagation();
-      _this.areaIn();
+
+    $('.my-edit-address .btn-save').click(function () {
+      var formData = {
+        name: $('#name').val(),
+        phone: $('#phone').val(),
+        area: $('#area-select').val(),
+        address: $('#address').val()
+      }
+
+      var validateResult = _this.areaValidate(formData);
+      if (validateResult.status) {
+        _bm.successMsg(validateResult.msg);
+      } else {
+        _bm.errorMsg(validateResult.msg);
+        return false;
+      }
+      return false;
     });
   },
 
@@ -601,14 +615,54 @@ var _address = {
     $('.choose-container').animate({left: '100%'}, 300);
   },
 
+  areaValidate: function(formData) {
+    var result = {
+      msg: '',
+      status: false
+    };
+
+    if (!_bm.validate(formData.name, 'require')) {
+      result.msg = '名字不能为空';
+      return result;
+    }
+
+    if (!_bm.validate(formData.phone, 'require')) {
+      result.msg = '手机号不能为空';
+      return result;
+    }
+
+    if (!_bm.validate(formData.phone, 'phone')) {
+      result.msg = '手机号不正确';
+      return result;
+    }
+
+    if (!_bm.validate(formData.area, 'require')) {
+      result.msg = '地区不能为空';
+      return result;
+    }
+
+    if (!_bm.validate(formData.address, 'require')) {
+      result.msg = '地址不能为空';
+      return result;
+    }
+
+    
+
+    result.msg = '成功';
+    result.status = true;
+    return result;
+  },
+
   onLoad: function () {
-    var val = $('#area').find("option:selected").val();
+    var val = $('#area-select').find("option:selected").val();
     if (val != null) {
+      var name = $('#area-select').find("option:selected").text();
+      $('#area').val(name);
       var item = $('.choose-container .choose-wrap .address-wrap');
       for (var i = 0, len = item.length; i < len; i++) {
-        var item = $(item[i]);
-        if (item.find('.name').attr('vdata-valal') == val) {
-          item.find('.icon-check').show();
+        var im = $(item[i]);
+        if (im.find('.name').attr('data-val') == val) {
+          im.find('.icon-check').show();
           break;
         }
       }

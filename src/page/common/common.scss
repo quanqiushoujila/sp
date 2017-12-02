@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-12-02 13:50:28
+* @Last Modified time: 2017-12-02 15:20:10
 * @Last Modified time: 2017-11-19 19:27:16
 */
 $green: #3dbd95;
@@ -63,6 +63,9 @@ a:hover, a:focus, a:active {
 }
 .btn {
   outline: none;
+}
+.dn {
+  display: none;
 }
 
 .text-green {
@@ -341,27 +344,28 @@ a:hover, a:focus, a:active {
       color: #333;
     }
   }
-  .agree {
-    position: relative;
-    margin: 10px 10px 0 10px;
-    color: #999;
-    input {
-      position: absolute;
-      top: 0;
-      right: 0; 
-      display: none;
-    }
-    span {
-      padding-left: 20px;
+}
+// checkbox
+.agree {
+  position: relative;
+  margin: 10px 10px 0 10px;
+  color: #999;
+  input {
+    position: absolute;
+    top: 0;
+    right: 0; 
+    display: none;
+  }
+  span {
+    padding-left: 20px;
 
-      background: url('../../image/icon6.png') -4px -75px no-repeat;
-    }
-    .agree-scueess {
-      background-position: -4px -113px;
-    }
-    .btn-text {
-      color: $green;
-    }
+    background: url('../../image/icon6.png') -4px -75px no-repeat;
+  }
+  .agree-scueess {
+    background-position: -4px -113px;
+  }
+  .btn-text {
+    color: $green;
   }
 }
 
@@ -1754,10 +1758,9 @@ a:hover, a:focus, a:active {
         font-size: 1em;
         margin-left: 0;
       }
-      select:disabled {
+      input:disabled {
         padding: 0 6px;
         background-color: #fff;
-        cursor: pointer;
       }
       .choose {
         position: absolute;
@@ -1786,6 +1789,9 @@ a:hover, a:focus, a:active {
           color: $green;
         }
       }
+    }
+    .agree {
+      margin: 0;
     }
   }
 }

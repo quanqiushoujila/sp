@@ -2,16 +2,62 @@
 <html lang="zh-CN">
 <head>
   <%= require('html-loader!./layout/html-common.html') %>
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
   <title><%= htmlWebpackPlugin.options.title%></title>
 </head>
 <body>
-  <div class="top top-wrap my-top">
+  <div class="top top-wrap my-top bg-grey">
     <a class="back" href="javascript:void(0);" onclick="window.history.back()"></a>
-    <h2 class="text-center">编辑地址</h2>
+    <h2 class="text-center">添加地址</h2>
   </div>
   <div class="my my-edit-address">
-   
+    <form action="" id="my-edit-address-form" class="my-edit-address-form">
+      <div class="input-wrap clearfix">
+        <label for="name" class="pull-left label-name">姓名</label>
+        <input type="text" id="name" class="pull-left form-control" value="">
+      </div>
+      <div class="input-wrap clearfix">
+        <label for="phone" class="pull-left label-name">电话</label>
+        <input type="phone" id="phone" class="pull-left form-control" value="">
+      </div>
+      <div class="input-wrap clearfix rel area-hook">
+        <label for="area" class="pull-left label-name">地区</label>
+        <input type="text" id="area" class="pull-left form-control" disabled value=""> 
+        <select name="area" id="area-select" class="pull-left form-control dn">
+          <option value=""></option>
+          <option value="1">定海1</option>
+          <option value="2">定海2</option>
+          <option value="3">定海3</option>
+          <option value="4">定海4</option>
+          <option value="5">定海5</option>
+          <option value="6">定海6</option>
+          <option value="7">定海7</option>
+          <option value="8">定海8</option>
+          <option value="9">定海9</option>
+          <option value="10">定海10</option>
+        </select>
+        <span class="choose">请选择<i class="fa fa-angle-right"></i></span>
+      </div>
+      <div class="input-wrap clearfix">
+        <label for="address" class="pull-left label-name">地址</label>
+        <textarea name="address" id="address" cols="30" rows="3"  class="pull-left form-control"></textarea>
+      </div>
+      <div class="input-wrap clearfix">
+        <div class="agree">
+          <label>
+            <input type="checkbox" class="agree-checkbox">
+            <span class="agree-scueess">
+              默认地址
+            </span>
+          </label>
+        </div>
+      </div>
+      <div class="clearfix text-center btn-wrap">
+        <button type="submit" class="btn btn-dafault btn-save">保存</button>
+      </div>
+    </form>
   </div>
+  <%= require('html-loader!./layout/choose.html') %>
   <%= require('html-loader!./layout/userFooter.html') %>
   <%= require('html-loader!./layout/footer.html') %>
   <script>
