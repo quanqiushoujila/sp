@@ -2,7 +2,7 @@
  * @Author: kai
  * @Date:   2017-11-14 20:06:11
  * @Last Modified by:   kai
- * @Last Modified time: 2017-11-30 10:28:42
+ * @Last Modified time: 2017-12-02 13:54:49
  */
 'use strict';
 // 通用方法
@@ -445,11 +445,22 @@ var _sort = {
 }
 
 var _bind = {
+  option: {
+    oldHeight: 0,
+    newHeight: 0,
+    icon: {
+      down: 'fa-angle-double-down',
+      up: 'fa-angle-double-up'
+    }
+  },
+
   init: function() {
     this.bindEvent();
+    this.onLoad();
   },
 
   bindEvent: function() {
+    var _this = this;
     $('.all-top-wrapper .focus').click(function(event) {
       $(this).toggleClass('success-green');
     });
@@ -462,6 +473,45 @@ var _bind = {
     $('.my-address .address-list .item').click(function(event) {
       //var checked = $(this).find()
     });
+
+    // 所有保姆评价
+    $('.all-comment-wrap .comment-detail .tag-list .tag').click(function () {
+      $(this).addClass('green-active').siblings().removeClass('green-active');
+    });
+
+    // 所有保姆评价
+    $('.all-comment-wrap .comment-detail .tag-list .down').click(function () {
+      if ($(this).hasClass(_this.option.icon.down)) {
+        $(this).removeClass(_this.option.icon.down).addClass(_this.option.icon.up)
+          .parent().removeClass('ofh').prev().animate({
+          height: _this.option.oldHeight},
+          100);
+      } else {
+        $(this).removeClass(_this.option.icon.up).addClass(_this.option.icon.down)
+          .parent().addClass('ofh').prev().animate({
+          height: _this.option.newHeight},
+          200);
+      }
+    });
+
+    
+  },
+
+  
+
+  onLoad: function () {
+    var tagList = $('.all-comment-wrap .tag-list');
+    this.option.oldHeight = tagList.find('.tag-list-wrap').height();
+    var tHeight = tagList.find('.tag').innerHeight();
+    var mHeight = parseInt(tagList.find('.tag').css('marginBottom'));
+    var currentHeight = tagList.height();
+    if (currentHeight <= (tHeight + mHeight) *2) {
+      $('.all-comment-wrap .tag-list .down').parent().remove();
+    } else {
+      this.option.newHeight = (tHeight + mHeight) * 2;
+      $('.all-comment-wrap .tag-list .tag-list-wrap').height((tHeight + mHeight) * 2).addClass('ofh');
+
+    }
   }
 }
 
@@ -508,6 +558,64 @@ var _my = {
   }
 }
 
+// 地址
+var _address = {
+  init: function () {
+    this.bindEvent();
+    this.onLoad();
+  },
+
+  bindEvent: function () {
+    var _this = this;
+    // 地区选择
+    $('.choose-container .choose-wrap .address-wrap').click(function () {
+      var name = $(this).find('.name').text();
+      $(this).find('.icon-check').show().parent().siblings().find('.icon-check').hide();
+      _this.areaOut();
+    });
+
+    // 地区返回按钮
+    $('.choose-container .back').click(function () {
+      _this.areaOut();
+    });
+
+    // 点击地区显示地区选择
+    $('.area-hook').click(function () {
+      _this.areaIn();
+    });
+    $('#area').addEventListener('click', function () {
+      alert(222)
+    });
+    $('#area').click(function (event) {
+      alert(11)
+      event.stopPropagation();
+      _this.areaIn();
+    });
+  },
+
+  areaIn: function () {
+    $('.choose-container').animate({left: 0}, 300);
+  },
+
+  areaOut: function () {
+    $('.choose-container').animate({left: '100%'}, 300);
+  },
+
+  onLoad: function () {
+    var val = $('#area').find("option:selected").val();
+    if (val != null) {
+      var item = $('.choose-container .choose-wrap .address-wrap');
+      for (var i = 0, len = item.length; i < len; i++) {
+        var item = $(item[i]);
+        if (item.find('.name').attr('vdata-valal') == val) {
+          item.find('.icon-check').show();
+          break;
+        }
+      }
+    }
+  }
+}
+
 $(function() {
   _log.init();
   _search.init();
@@ -516,4 +624,5 @@ $(function() {
   // myaddress
   _my.init();
   _bm.onLoad();
+  _address.init();
 });

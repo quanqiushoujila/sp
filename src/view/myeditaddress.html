@@ -20,17 +20,34 @@
         <label for="phone" class="pull-left label-name">电话</label>
         <input type="phone" id="phone" class="pull-left form-control" value="13111111111">
       </div>
-      <div class="input-wrap clearfix rel">
+      <div class="input-wrap clearfix rel area-hook">
         <label for="area" class="pull-left label-name">地区</label>
-        <input type="text" id="area" class="pull-left form-control" disabled value="舟山 定海">
+        <!-- <input type="text" id="area" class="pull-left form-control" disabled value="舟山 定海"> -->
+        <select name="area" id="area" class="pull-left form-control" readonly>
+          <option value=""></option>
+          <option value="1">定海1</option>
+          <option value="2" selected>定海2</option>
+          <option value="3">定海3</option>
+          <option value="4">定海4</option>
+          <option value="5">定海5</option>
+          <option value="6">定海6</option>
+          <option value="7">定海7</option>
+          <option value="8">定海8</option>
+          <option value="9">定海9</option>
+          <option value="10">定海10</option>
+        </select>
         <span class="choose">请选择<i class="fa fa-angle-right"></i></span>
       </div>
       <div class="input-wrap clearfix">
         <label for="address" class="pull-left label-name">地址</label>
-        <textarea name="address" id="address" cols="30" rows="2"  class="pull-left form-control">定海定海定海定海定海定海定海</textarea>
+        <textarea name="address" id="address" cols="30" rows="3"  class="pull-left form-control">定海定海定海定海定海定海定海</textarea>
+      </div>
+      <div class="clearfix text-center btn-wrap">
+        <button type="submit" class="btn btn-dafault btn-save">保存</button>
       </div>
     </form>
   </div>
+  <%= require('html-loader!./layout/choose.html') %>
   <%= require('html-loader!./layout/userFooter.html') %>
   <%= require('html-loader!./layout/footer.html') %>
   <script>

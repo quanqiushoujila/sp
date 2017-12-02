@@ -6,14 +6,31 @@
   <title><%= htmlWebpackPlugin.options.title%></title>
 </head>
 <body>
+  <div class="top top-wrap">
+    <a class="back" href="javascript:void(0);" onclick="window.history.back()"></a>
+    <h2 class="text-center">所有评价</h2>
+  </div>
   <div class="detail-wrap all-comment-wrap">
     
     <div class="comment-detail">
-      <div class="tag-list">
-          <span class="tag">勤快（11）</span>
-          <span class="tag">勤快（11）</span>
-          <span class="tag">勤快（11）</span>
+      <div class="tag-list clearfix">
+        <div class="clearfix tag-list-wrap">
+          <span class="tag pull-left">勤快（11）</span>
+          <span class="tag pull-left">勤快（11）</span>
+          <span class="tag pull-left">勤快（11）</span>
+          <span class="tag pull-left">勤快（11）</span>
+          <span class="tag pull-left">勤快（11）</span>
+          <span class="tag pull-left">勤快（11）</span>
+          <span class="tag pull-left">勤快（11）</span>
+          <span class="tag pull-left">勤快（11）</span>
+          <span class="tag pull-left">勤快（11）</span>
+          <span class="tag pull-left">勤快（11）</span>
+          <span class="tag pull-left">勤快（11）</span>
         </div>
+        <div class="down-wrap">
+          <i class="fa fa-angle-double-down down"></i>
+        </div>
+      </div>
       <div class="content-container">
         <div class="item">
           <div class="info clearfix">
@@ -23,7 +40,7 @@
             <p class="name pull-left">名字</p>
             <p class="date pull-right">2017.01.01</p>
           </div>
-          <p class="star">打分<span class="icon icon1"></span></p>
+          <p class="star">打分<span class="icon icon2"></span></p>
           <p class="detail">好好好好好好好好好好好好好好好好好好</p>
           <div class="swiper-container swiper-container-img-list clearfix">
             <div class="swiper-wrapper">
@@ -48,8 +65,8 @@
             </div>
           </div>
           <div class="foot text-right">
-            <a href="#" class="del-comment-btn btn btn-default"><i class="fa"></i>评论</a>
-            <a href="#" class="del-comment-btn btn btn-default"><i class="fa"></i>赞</a>
+            <a href="#" class="del-comment-btn btn btn-default"><i class="fa fa-commenting-o"></i>评论</a>
+            <a href="#" class="del-comment-btn btn btn-default"><i class="fa fa-thumbs-o-up"></i>赞</a>
           </div>
         </div>
         <div class="item">
@@ -85,8 +102,8 @@
             </div>
           </div>
           <div class="foot text-right">
-            <a href="#" class="del-comment-btn btn btn-default"><i class="fa"></i>评论</a>
-            <a href="#" class="del-comment-btn btn btn-default"><i class="fa"></i>赞</a>
+            <a href="#" class="del-comment-btn btn btn-default"><i class="fa fa-commenting-o"></i>评论</a>
+            <a href="#" class="del-comment-btn btn btn-default"><i class="fa fa-thumbs-o-up"></i>赞</a>
           </div>
         </div>
       </div>

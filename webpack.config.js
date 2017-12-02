@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-08-09 15:43:54
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-30 10:13:23
+* @Last Modified time: 2017-12-02 14:13:22
 */
 // var path                = require('path')
 var webpack             = require('webpack');
@@ -41,7 +41,7 @@ var config = {
     },
     output: {
         path: './dist',
-        publicPath : '/dist',
+        publicPath : '../',
         filename: 'js/[name].js'
     },
     externals : {

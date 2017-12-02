@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-11-30 10:27:36
+* @Last Modified time: 2017-12-02 13:50:28
 * @Last Modified time: 2017-11-19 19:27:16
 */
 $green: #3dbd95;
@@ -75,6 +75,9 @@ a:hover, a:focus, a:active {
 }
 .db {
   display: block;
+}
+.ofh {
+  overflow: hidden;
 }
 
 
@@ -1243,11 +1246,13 @@ a:hover, a:focus, a:active {
   }
   .tag-list {
     padding: 10px 15px;
+    position: relative;
     .tag {
       background-color: #eafbe6;
       padding: 2px 10px;
       display: inline-block;
       border-radius: 5px;
+      margin: 0 10px 10px 0;
     }
   }
   .content-container {
@@ -1382,9 +1387,34 @@ a:hover, a:focus, a:active {
 
 // 所有评价
 .all-comment-wrap {
+  height: calc(100vh - 135px); 
   .tag-list {
     background-color: #fff;
     border-bottom: 1px solid #ddd;
+    .tag {
+      &.green-active {
+        background-color: #11c791;
+        color: #fff;
+      }
+    }
+    .down-wrap {
+      height: 35px;
+    }
+    .down {
+      position: absolute;
+      text-align: center;
+      width: 50%;
+      height: 30px;
+      font-size: 2em;
+      color: #333;
+      bottom: 5px;
+      left: 25%;
+    }
+  }
+  .content-container {
+    .item {
+     margin-bottom: 10px;
+    }
   }
 }
 
@@ -1695,7 +1725,7 @@ a:hover, a:focus, a:active {
 // 编辑地址
 .my-edit-address {
   .my-edit-address-form {
-    background-color: #fff;
+    
     font-size: 1.2em;
     input {
       outline: none;
@@ -1704,8 +1734,10 @@ a:hover, a:focus, a:active {
     }
     textarea {
       margin-left: 10px;
+      resize:none
     }
     .input-wrap {
+      background-color: #fff;
       padding: 15px;
       border-bottom: 1px solid #ddd;
       .label-name {
@@ -1722,8 +1754,10 @@ a:hover, a:focus, a:active {
         font-size: 1em;
         margin-left: 0;
       }
-      input:disabled {
+      select:disabled {
+        padding: 0 6px;
         background-color: #fff;
+        cursor: pointer;
       }
       .choose {
         position: absolute;
@@ -1737,14 +1771,60 @@ a:hover, a:focus, a:active {
         }
       }
     }
+    .btn-wrap {
+      margin-top: 20px;
+      .btn-save {
+        font-size: 1.2em;
+        color: #fff;
+        background-color: $green;
+        padding: 8px 40px;
+        border-radius: 40px;
+        border-color: $green;
+        &:focus, &.active {
+          background-color: #fff;
+          border-color: $green;
+          color: $green;
+        }
+      }
+    }
+  }
+}
+
+// 选择地区
+.choose-container {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 100%; 
+  bottom: 71px;
+  overflow-y: auto;
+  .choose-wrap {
+    height: calc(100vh - 126px);
+    background-color: $grey;
+  }
+  .choose-wrap {
+    background-color: #fff;
+    overflow-y: auto;
+    height: calc(100vh - 126px);
+    .address-wrap {
+      position: relative;
+      font-size: 1.1em;
+      padding: 15px;
+      border-bottom: 1px solid  #ddd;
+      .icon-check {
+        position: absolute;
+        font-size: 1.5em;
+        top: 12px;
+        right: 15px;
+        color: $green;
+        display: none;
+      }
+    }
   }
 }
 
 
-
-
 .bg-grey {
-  background-color: #f6f6f6;
   border-bottom: 1px solid #ccc;
 }
 .rel {
