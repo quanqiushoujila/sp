@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <%= require('html-loader!./layout/html-common1.html') %>
+  <title><%= htmlWebpackPlugin.options.title%></title>
+</head>
+<body>
+  <div class="top top-wrap my-top bg-grey">
+    <a class="back" href="javascript:void(0);" onclick="window.history.back()"></a>
+    <h2 class="text-center">发表评论</h2>
+  </div>
+  <div class="base-wrap comment-container">
+    <div class="worker clearfix">
+      <div class="pull-left text-center img">
+        <img src="<%= require('../image/avatar.png') %>" alt="" width="100%">
+      </div>
+      <p class="name pull-left">李阿姨</p>
+    </div>
+  </div>
+
+  <%= require('html-loader!./layout/userFooter.html') %>
+  <%= require('html-loader!./layout/footer1.html') %>
+</body>
+</html>
