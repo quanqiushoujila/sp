@@ -2,7 +2,7 @@
  * @Author: kai
  * @Date:   2017-11-14 20:06:11
  * @Last Modified by:   kai
- * @Last Modified time: 2017-12-02 15:24:15
+ * @Last Modified time: 2017-12-04 08:52:00
  */
 'use strict';
 // 通用方法
@@ -84,11 +84,11 @@ var _bm = {
     }
   },
 
-  phoneWatch: function () {
+  /*phoneWatch: function () {
     window.addEventListener('popstate', function (event) {
       alert('event:'+ event)
     });
-  },
+  },*/
   onLoad: function () {
     this.phoneWatch();
   }

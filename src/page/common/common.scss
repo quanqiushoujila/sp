@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-12-03 11:40:04
+* @Last Modified time: 2017-12-04 09:15:00
 */
 $green: #3dbd95;
 $grey: #f0f0f0;
@@ -63,6 +63,9 @@ a:hover, a:focus, a:active {
 .btn {
   outline: none;
 }
+.btn:focus, .btn:active {
+  outline: none;
+}
 .dn {
   display: none;
 }
@@ -86,16 +89,21 @@ a:hover, a:focus, a:active {
   overflow-y: auto;
   height: calc(100vh - 126px);
 }
+.base1-wrap {
+  overflow-y: auto;
+  height: calc(100vh - 141px);
+}
+.base2-wrap {
+  overflow-y: auto;
+  height: calc(100vh - 66px);
+}
+
 
 .center-content {
   &.all-center-content {
     position: inherit;
   }
-  position: absolute;
-  top: 70px;
-  bottom: 70px;
-  left: 0;
-  right: 0;
+  position: relative;
   overflow-y: auto;
   z-index: 1;
   &.center-content-list {
@@ -112,10 +120,7 @@ a:hover, a:focus, a:active {
   padding: 15px 20px;
   position: relative;
   &.search-type-one {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
+    position: relative;
     z-index: 10;
   }
 
@@ -303,7 +308,7 @@ a:hover, a:focus, a:active {
   .submit-wrap {
     margin: 30px 10px 0 10px;
     .btn {
-      padding: 15px 0;
+      padding: 10px 0;
       background-color: $green;
       color: #fff;
       font-size: 1.5em;
@@ -373,11 +378,7 @@ a:hover, a:focus, a:active {
 
 // 个人中心
 .user-wraper {
-  position: absolute;
-  top: 55px;
-  bottom: 70px;
-  left: 0;
-  right: 0;
+  position: relative;
   overflow-y: auto;
   .user-top {
     position: relative;
@@ -666,9 +667,8 @@ a:hover, a:focus, a:active {
     }
     .small-text {
       float: right;
-      font-size: 0.75em;
+      font-size: 0.875em;
       color: #999;
-      margin-top: 3px;
     }
   }
   .function-list {
@@ -1856,7 +1856,7 @@ a:hover, a:focus, a:active {
   position: relative;
 }
 
-@media (max-width: 375px) {
+@media (max-width: 360px) {
 
 }
 @media (max-width: 320px) {
