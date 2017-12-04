@@ -2,7 +2,7 @@
  * @Author: kai
  * @Date:   2017-11-14 20:06:11
  * @Last Modified by:   kai
- * @Last Modified time: 2017-12-04 08:52:00
+ * @Last Modified time: 2017-12-04 19:02:18
  */
 'use strict';
 // 通用方法
@@ -89,9 +89,9 @@ var _bm = {
       alert('event:'+ event)
     });
   },*/
-  onLoad: function () {
+  /*onLoad: function () {
     this.phoneWatch();
-  }
+  }*/
 };
 
 // 登录注册找回密码
@@ -696,6 +696,5 @@ $(function() {
   _bind.init();
   // myaddress
   _my.init();
-  _bm.onLoad();
   _address.init();
 });

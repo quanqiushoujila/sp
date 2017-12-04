@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-12-04 09:15:00
+* @Last Modified time: 2017-12-04 19:41:38
 */
 $green: #3dbd95;
 $grey: #f0f0f0;
@@ -97,7 +97,19 @@ a:hover, a:focus, a:active {
   overflow-y: auto;
   height: calc(100vh - 66px);
 }
-
+.base3-wrap {
+  position: absolute !important;
+  left: 0;
+  right: 0;
+  bottom: 70px;
+}
+.base4-wrap {
+  overflow-y: auto;
+  height: calc(100vh - 70px);
+}
+.mb0 {
+  margin-bottom: 0 !important;
+}
 
 .center-content {
   &.all-center-content {
@@ -508,6 +520,7 @@ a:hover, a:focus, a:active {
   font-size: 1em;
   background-color: #f6f6f6;
   border-top: 1px solid #d7d7d7;
+  z-index: 10;
   .item {
     color: #333;
     height: 30px;
@@ -1845,6 +1858,25 @@ a:hover, a:focus, a:active {
     .name {
       margin: 12px 0 0 10px;
       font-size: 1.2em;
+    }
+  }
+  .img-upload-wrap {
+    padding: 10px 15px;
+    background-color: #fff;
+    textarea {
+      width: 100%;
+      border: none;
+      resize : none;
+    }
+  }
+  .star-wrap {
+    padding: 10px 15px;
+    background-color: #fff;
+    .name {
+      font-size: 1em;
+    }
+    .star-container {
+      margin-left: 40px;
     }
   }
 }

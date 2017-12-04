@@ -10,7 +10,7 @@ $('div').raty();
 $('div').raty('score'); 
 
 <!--dom结构部分-->
-<div id="uploader-demo">
+<div id="uploader">
     <!--用来存放item-->
     <div id="fileList" class="uploader-list"></div>
     <div id="filePicker">选择图片</div>
@@ -23,7 +23,7 @@ $('div').raty('score');
       auto: true,
 
       // swf文件路径
-      swf: BASE_URL + '/js/Uploader.swf',
+      swf: '/js/Uploader.swf',
 
       // 文件接收服务端。
       server: 'http://webuploader.duapp.com/server/fileupload.php',

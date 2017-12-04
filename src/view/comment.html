@@ -2,6 +2,8 @@
 <html lang="zh-CN">
 <head>
   <%= require('html-loader!./layout/html-common1.html') %>
+  <link href="https://cdn.bootcss.com/raty/2.8.0/jquery.raty.min.css" rel="stylesheet">
+  <link href="https://cdn.bootcss.com/webuploader/0.1.1/webuploader.css" rel="stylesheet">
   <title><%= htmlWebpackPlugin.options.title%></title>
 </head>
 <body>
@@ -16,9 +18,54 @@
       </div>
       <p class="name pull-left">李阿姨</p>
     </div>
+    <div class="img-upload-wrap">
+      <textarea name="" id="" cols="30" rows="5"></textarea>
+      <div>
+        <div id="uploader">
+          <!--用来存放item-->
+          <div id="fileList" class="uploader-list"></div>
+          <div id="filePicker">选择图片</div>
+        </div>
+      </div>
+    </div>
+    <div class="star-wrap clearfix">
+      <span class="pull-left name">打分</span>
+      <div id="star" class="star-container"></div>
+    </div>
   </div>
 
   <%= require('html-loader!./layout/userFooter.html') %>
   <%= require('html-loader!./layout/footer1.html') %>
+  <script src="https://cdn.bootcss.com/raty/2.8.0/jquery.raty.min.js"></script>
+  <script src="https://cdn.bootcss.com/webuploader/0.1.1/webuploader.min.js"></script>
+  <script>
+    $('#star').raty({
+      starOff : 'https://cdn.bootcss.com/raty/2.8.0/images/star-off.png',
+      starOn  : 'https://cdn.bootcss.com/raty/2.8.0/images/star-on.png'
+    });
+
+    var uploader = WebUploader.create({
+
+      // 选完文件后，是否自动上传。
+      auto: true,
+
+      // swf文件路径
+      swf: 'https://cdn.bootcss.com/webuploader/0.1.1/Uploader.swf',
+
+      // 文件接收服务端。
+      server: 'http://webuploader.duapp.com/server/fileupload.php',
+
+      // 选择文件的按钮。可选。
+      // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+      pick: '#filePicker',
+
+      // 只允许选择图片文件。
+      accept: {
+        title: 'Images',
+        extensions: 'gif,jpg,jpeg,bmp,png',
+        mimeTypes: 'image/*'
+      }
+    });
+  </script>
 </body>
 </html>
