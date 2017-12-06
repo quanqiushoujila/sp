@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-12-05 20:16:44
+* @Last Modified time: 2017-12-06 19:21:18
 */
 $green: #3dbd95;
 $grey: #f0f0f0;
@@ -2001,6 +2001,9 @@ a:hover, a:focus, a:active {
   }
   .my .server-list .item .info .name {
     font-size: 1.1em;
+  }
+  .comment-detail .content-container .item .foot .del-comment-btn {
+    padding: 3px 12px;
   }
 }
 

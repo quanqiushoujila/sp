@@ -2,7 +2,7 @@
  * @Author: kai
  * @Date:   2017-11-14 20:06:11
  * @Last Modified by:   kai
- * @Last Modified time: 2017-12-05 19:50:59
+ * @Last Modified time: 2017-12-06 19:44:13
  */
 'use strict';
 // 通用方法
@@ -372,6 +372,14 @@ var _sort = {
     // 排序
     $('.sort-wrap .sort-list .item').click(function(event) {
       var index = $(this).index();
+      var item = $('.shadow-wrap .type-wrap');
+      for(var i = 0, len = item.length; i < len; i++) {
+        if ($(item[i]).css('display') === 'block' && index === i) {
+          $(item[i]).hide();
+          _this.hideShadowList();
+          return ;
+        }
+      }
       $('.shadow-wrap').show().find('.type-wrap').eq(index).show().siblings('.type-wrap').hide();
     });
 
@@ -381,7 +389,7 @@ var _sort = {
       $(this).addClass('success-green').siblings('.item').removeClass('success-green')
         .parent().siblings('.type-wrap').find('.item').removeClass('success-green');
 
-      _this.hideShadowList();
+      /*_this.hideShadowList();*/
 
     });
 
@@ -396,6 +404,7 @@ var _sort = {
 
     $('.shadow-wrap').click(function(event) {
       _this.hideShadowList();
+      $('.shadow-wrap .type-wrap').hide();
     });
 
     $('.choose-type').click(function(event) {
@@ -409,9 +418,9 @@ var _sort = {
     });
 
     //筛选确定
-    $('.sort-wrap .btn-list-ok').click(function() {
+    /*$('.sort-wrap .btn-list-ok').click(function() {
       _this.hideShadowList();
-    });
+    });*/
 
     //筛选取消
     $('.sort-wrap .btn-list-cancle').click(function() {
