@@ -26,9 +26,9 @@
       <textarea name="" id="" cols="30" rows="5"></textarea>
       <div>
         <div id="uploader">
-          <!--用来存放item-->
           <div id="fileList" class="uploader-list"></div>
           <div id="filePicker">选择图片</div>
+          <span class="warning">上传的文件不能超过1M</span>
         </div>
       </div>
     </div>
@@ -36,68 +36,110 @@
       <span class="pull-left name">打分</span>
       <div id="star" class="star-container"></div>
     </div>
+    <div class="submit-wrap text-center">
+      <button type="button" class="btn btn-submit">提交</button>
+    </div>
   </div>
   <%= require('html-loader!./layout/userFooter.html') %>
   <%= require('html-loader!./layout/footer1.html') %>
   <script src="https://cdn.bootcss.com/raty/2.8.0/jquery.raty.min.js"></script>
   <script src="https://cdn.bootcss.com/webuploader/0.1.1/webuploader.min.js"></script>
   <script>
-  $('#star').raty({
-    starOff: 'https://cdn.bootcss.com/raty/2.8.0/images/star-off.png',
-    starOn: 'https://cdn.bootcss.com/raty/2.8.0/images/star-on.png'
-  });
-  var $list = $('#fileList');
-  var uploader = WebUploader.create({
+    $('#star').raty({
+      starOff: 'https://cdn.bootcss.com/raty/2.8.0/images/star-off.png',
+      starOn: 'https://cdn.bootcss.com/raty/2.8.0/images/star-on.png'
+    });
+    var $list = $('#fileList');
+    var uploader = WebUploader.create({
 
-    // 选完文件后，是否自动上传。
-    auto: true,
+      // 选完文件后，是否自动上传。
+      auto: false,
 
-    // swf文件路径
-    swf: 'https://cdn.bootcss.com/webuploader/0.1.1/Uploader.swf',
+      // swf文件路径
+      swf: 'https://cdn.bootcss.com/webuploader/0.1.1/Uploader.swf',
 
-    // 文件接收服务端。
-    server: 'http://webuploader.duapp.com/server/fileupload.php',
+      // 文件接收服务端。
+      server: 'http://webuploader.duapp.com/server/fileupload.php',
 
-    // 选择文件的按钮。可选。
-    // 内部根据当前运行是创建，可能是input元素，也可能是flash.
-    pick: '#filePicker',
+      // 选择文件的按钮。可选。
+      // 内部根据当前运行是创建，可能是input元素，也可能是flash.
+      pick: '#filePicker',
 
-    // 只允许选择图片文件。
-    accept: {
-      title: 'Images',
-      extensions: 'gif,jpg,jpeg,bmp,png',
-      mimeTypes: 'image/*'
-    },
-    resize: true,
-    fileNumLimit: 6, //限制上传个数
-    fileSingleSizeLimit: 1024000 //限制单个上传图片的大小 1M
-  });
-  uploader.on('fileQueued', function(file) {
-    var $li = $(
-        '<div id="' + file.id + '" class="file-item thumbnail">' +
-        '<img>' +
-        '<div class="info">' + file.name + '</div>' +
-        '</div>'
-      ),
-      $img = $li.find('img');
+      // 只允许选择图片文件。
+      accept: {
+        title: 'Images',
+        extensions: 'gif,jpg,jpeg,bmp,png',
+        mimeTypes: 'image/*'
+      },
+      threads: 6, // 允许同时最大上传进程数
+      resize: true,
+      method: 'post',
+      fileSizeLimit: 1024000 * 6, //验证文件总大小是否超出限制,超出则不允许加入队列
+      fileNumLimit: 6, //验证文件总数量,超出则不允许加入队列。
+      fileNumLimit: 6, //限制上传个数
+      fileSingleSizeLimit: 1024000 //限制单个上传图片的大小 1M
+    });
+    uploader.on('fileQueued', function(file) {
+      var $li = $(
+          '<div id="' + file.id + '" class="file-item thumbnail">' +
+          '<img>' +
+          '<span class="cancel">x</span>' +
+          '</div>'
+        ),
+
+        $img = $li.find('img');
+
+      showError = function(code) {
+        switch (code) {
+          case 'exceed_size':
+            text = '文件大小超出';
+            break;
+          case 'interrupt':
+            text = '上传暂停';
+            break;
+
+          default:
+            text = '上传失败，请重试';
+            break;
+        }
+
+        alert(text)
+      };
+      // $list为容器jQuery实例
+      $list.append($li);
+
+      // 创建缩略图
+      // 如果为非图片文件，可以不用调用此方法。
+      // thumbnailWidth x thumbnailHeight 为 100 x 100
+      var thumbnailWidth = thumbnailHeight = 100;
+      uploader.makeThumb(file, function(error, src) {
+        if (error) {
+          $img.replaceWith('<span>不能预览</span>');
+          return;
+        }
+        $img.attr('src', src);
+      }, thumbnailWidth, thumbnailHeight);
+
+      $li.on('click', 'span', function() {
+        uploader.removeFile(file);
+        $(this).parent().remove();
+      });
+
+      file.on('statuschange', function( cur, prev ) {
+        alert(cur)
+          if ( cur === 'error' || cur === 'invalid' ) {
+            showError( file.statusText );
+          }
+      });
+    });
 
 
-    // $list为容器jQuery实例
-    $list.append($li);
+    $('.btn-submit').on('click', function () {
+      var textarea = $('textarea').val();
+      var file ;
+      uploader.upload();
+    });
 
-    // 创建缩略图
-    // 如果为非图片文件，可以不用调用此方法。
-    // thumbnailWidth x thumbnailHeight 为 100 x 100
-    var thumbnailWidth = thumbnailHeight = 100;
-    uploader.makeThumb(file, function(error, src) {
-      if (error) {
-        $img.replaceWith('<span>不能预览</span>');
-        return;
-      }
-
-      $img.attr('src', src);
-    }, thumbnailWidth, thumbnailHeight);
-  });
   </script>
 </body>
 

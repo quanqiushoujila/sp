@@ -2,7 +2,7 @@
 * @Author: kai
 * @Date:   2017-11-14 20:05:55
 * @Last Modified by:   kai
-* @Last Modified time: 2017-12-06 19:21:18
+* @Last Modified time: 2017-12-08 22:26:58
 */
 $green: #3dbd95;
 $grey: #f0f0f0;
@@ -1877,6 +1877,62 @@ a:hover, a:focus, a:active {
     }
     .star-container {
       margin-left: 40px;
+    }
+  }
+  .warning {
+    color: #ccc;
+    font-size: .875m;
+  }
+  #filePicker {
+    margin-top: 10px;
+  }
+  .img-upload-wrap {
+    textarea {
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+  }
+  .uploader-list {
+    .thumbnail {
+      display: inline-block;
+      border: none;
+      margin: 5px 10px 5px 5px;
+      padding: 0;
+      position: relative;
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      .cancel {
+        position: absolute;
+        top: -7px;
+        right: -7px;
+        font-size: 14px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: #666;
+        color: #fff;
+        line-height: 20px;
+        text-align: center;
+        cursor: pointer;
+      }
+    }
+  }
+  .submit-wrap {
+    padding: 15px 0;
+    background-color: #fff;
+    border-top: 1px solid #ddd;
+    .btn-submit {
+      border: 1px solid  $green;
+      color: $green;
+      padding: 6px 25px;
+      border-radius: 35px;
+      background-color: #fff;
+      &:hover {
+        background-color: $green;
+        color: #fff;
+      }
     }
   }
 }
